@@ -1,0 +1,82 @@
+,addr,response
+0,100.2.244.51:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+"
+1,100.2.244.51:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+"
+2,100.2.244.51:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+"
+0,71.105.188.25:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,71.105.188.25:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,71.105.188.25:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,108.6.122.211:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,108.6.122.211:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,108.6.122.211:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,5.178.170.30:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+1,5.178.170.30:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+2,5.178.170.30:9000,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"

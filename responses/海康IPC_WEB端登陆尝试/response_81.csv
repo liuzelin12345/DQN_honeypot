@@ -1,0 +1,96 @@
+,addr,response
+0,115.179.100.127:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>4</statusCode>
+<statusString>Invalid Operation</statusString>
+<subStatusCode>badAuthorization</subStatusCode>
+</ResponseStatus>
+"
+1,115.179.100.127:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>4</statusCode>
+<statusString>Invalid Operation</statusString>
+<subStatusCode>badAuthorization</subStatusCode>
+</ResponseStatus>
+"
+2,115.179.100.127:81,Connection refused
+0,78.0.68.80:81,Connection refused
+1,78.0.68.80:81,Connection refused
+2,78.0.68.80:81,Connection refused
+0,190.64.136.147:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+1,190.64.136.147:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+2,190.64.136.147:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+0,118.69.133.140:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,118.69.133.140:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,118.69.133.140:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,212.124.20.177:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,212.124.20.177:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,212.124.20.177:81,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"

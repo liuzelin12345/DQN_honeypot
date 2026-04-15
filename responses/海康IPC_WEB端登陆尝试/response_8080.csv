@@ -1,0 +1,109 @@
+,addr,response
+0,81.149.219.48:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+1,81.149.219.48:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+2,81.149.219.48:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+0,112.120.29.244:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,112.120.29.244:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,112.120.29.244:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,31.10.90.247:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+1,31.10.90.247:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+2,31.10.90.247:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.std-cgi.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+<subStatusString>Tag 4 is invalid (two root tags)</subStatusString>
+</ResponseStatus>
+"
+0,46.106.219.1:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,46.106.219.1:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,46.106.219.1:8080,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,213.97.84.201:8080,"<?xml version=""1.0"" encoding=""UTF-8""?><ResponseStatus version=""2.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema""><statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,213.97.84.201:8080,"<?xml version=""1.0"" encoding=""UTF-8""?><ResponseStatus version=""2.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema""><statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,213.97.84.201:8080,"<?xml version=""1.0"" encoding=""UTF-8""?><ResponseStatus version=""2.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema""><statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"

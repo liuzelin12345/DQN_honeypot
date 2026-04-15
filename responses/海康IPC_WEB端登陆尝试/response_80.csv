@@ -1,0 +1,100 @@
+,addr,response
+0,189.41.223.232:80,Connection refused
+1,189.41.223.232:80,Connection refused
+2,189.41.223.232:80,Connection refused
+0,86.121.221.141:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,86.121.221.141:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,86.121.221.141:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,151.231.191.53:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,151.231.191.53:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,151.231.191.53:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,194.26.164.55:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,194.26.164.55:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,194.26.164.55:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+0,82.10.233.246:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+1,82.10.233.246:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+2,82.10.233.246:80,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"

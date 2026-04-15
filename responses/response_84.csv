@@ -1,0 +1,1805 @@
+,response
+0,
+1,"ï»¿<?xml version='1.0' encoding='utf-8'?>
+<FileVersion>
+    <Platform name='win32'>
+        <npWebVideoPlugin.dll>3,0,6,40</npWebVideoPlugin.dll>
+        <WebVideoActiveX.ocx>3,0,6,40</WebVideoActiveX.ocx>
+        <PlayCtrl.dll>7,3,5,0</PlayCtrl.dll>
+        <StreamTransClient.dll>1,1,3,8</StreamTransClient.dll>
+        <SystemTransform.dll>2,5,2,10</SystemTransform.dll>
+        <NetStream.dll>1,0,5,44</NetStream.dll>
+        <AudioIntercom.dll>1,4,0,6</AudioIntercom.dll>
+    </Platform>
+</FileVersion>"
+2,"<div id=""main_plugin"" class=""main-plugin""></div>"
+3,"<div id=""tabs"" class=""network tabs-1"">
+	<ul id=""advanced"" ng-controller=""advancedController"">
+	    <li ng-if=""oAdvancedCap.bSupportSnmp"" module=""advancedSnmp""><a href=""config/network/advancedSnmp.asp"" hidefocus>SNMP</a></li>
+        <li ng-if=""oAdvancedCap.bSupportFtp"" module=""advancedFtp""><a href=""config/network/advancedFtp.asp"" hidefocus>FTP</a></li>
+        <li module=""advancedEmail""><a href=""config/network/advancedEmail.asp"" hidefocus>Email</a></li>
+        <li ng-if=""oAdvancedCap.bSupportPlatform"" module=""advancedPlatform""><a href=""config/network/advancedPlatform.asp"" hidefocus ng-bind=""oLan.platformAccess""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportHttps"" module=""advancedHttps""><a href=""config/network/advancedHttps.asp"" hidefocus ng-bind=""oLan.netService""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportQos"" module=""advancedQos""><a href=""config/network/advancedQos.asp"" hidefocus>QoS</a></li>
+        <li ng-if=""oAdvancedCap.m_bSupportWAN"" module=""advancedWAN""><a href=""config/network/advancedWAN.asp"" hidefocus>WAN</a></li>
+        <li ng-if=""oAdvancedCap.bSupportWifi"" module=""advancedWifi""><a href=""config/network/advancedWifi.asp"" hidefocus>Wi-Fi</a></li>
+        <!--<li ng-if=""oAdvancedCap.bSupportWLANAP"" module=""advancedWLANAP""><a href=""config/network/advancedWLANAP.asp"" hidefocus ng-bind=""oLan.wlanap""></a></li>-->
+        <li ng-if=""oAdvancedCap.bSupport28181Service"" module=""advanced28181Service""><a href=""config/network/advanced28181Service.asp"" hidefocus ng-bind=""oLan.service28181""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportMulticast"" module=""advancedMulticast""><a href=""config/network/advancedMulticast.asp"" hidefocus ng-bind=""oLan.activeMulticase""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportRtmp"" module=""advancedRtmp""><a href=""config/network/advancedRtmp.asp"" hidefocus ng-bind=""oLan.rtmpConfig""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportNetworkOther"" module=""advancedOther""><a href=""config/network/advancedOther.asp"" hidefocus ng-bind=""oLan.other""></a></li>
+	    <li ng-if=""oAdvancedCap.bSupportProtocolConfig"" module=""advancedProtocolConfig""><a href=""config/network/advancedProtocolConfig.asp"" hidefocus ng-bind=""oLan.integrationProtocol""></a></li>
+		<li ng-if=""oCustom.bSupportCustom"" module=""networkCustom""><a href=""config/custom/custom.asp"" hidefocus ng-bind=""oCustom.szCustomName""></a></li>
+	</ul>
+</div>"
+4,"<!DOCTYPE html>
+<head>
+    <title>Unauthorized</title>
+    <link rel=""shortcut icon"" href=""data:image/x-icon;,"" type=""image/x-icon"">
+</head>
+<body>
+<h2>Access Error: 401 -- Unauthorized</h2>
+<pre></pre>
+</body>
+</html>
+"
+5,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+</userCheck>
+"
+6,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>lock</lockStatus>
+<unlockTime>1798</unlockTime>
+<retryLoginTime>0</retryLoginTime>
+</userCheck>"
+7,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body class=""config"" id=""config"">
+	<div class=""layout-north ng-cloak"" id=""header"" ng-controller=""headerController"" ng-cloak>
+		<div class=""header"" ng-include=""'common/header.asp'"" onload=""headerLoaded();""></div>
+	</div>
+	<div class=""layout-west ng-cloak"" id=""menu"" ng-controller=""menuController"" ng-cloak>
+		<div class=""sdmenu"" onselectstart=""return false;"" ng-include=""'common/menu.asp'"" onload=""menuLoaded();""></div>
+	</div>
+	<div class=""layout-center"">
+		<div class=""layout-center-inner"">
+			<div id=""view"" class=""view""></div>
+		</div>
+		<div class=""layout-south-inner"">
+			<div class=""footer"" id=""footer""></div>
+		</div>
+	</div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+	document.write(""<script src='../script/lib/jquery/laydate/laydate.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+<script for=main_plugin_multiVideoActiveX event=""GetSelectWndInfo(SelectWndInfo)"">
+	GetSelectWndInfo(SelectWndInfo);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""PluginEventHandler(iEventType, iParam1, iParam2)"">
+	PluginEventHandler(iEventType, iParam1, iParam2);
+</script>
+</html>"
+8,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>lock</lockStatus>
+<unlockTime>1799</unlockTime>
+<retryLoginTime>0</retryLoginTime>
+</userCheck>"
+9,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ActivateStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<Activated>true</Activated>
+</ActivateStatus>
+"
+10,"<div id=""video"" ng-controller=""videoController"">
+	<div class=""items"">
+		<div class=""item"">
+			<span channel analog=""oAnalog"" digital=""oDigital"" analog-num=""iAnalogChannelNum"" channel-id=""iChannelId"" lan=""oVideoLan"" df-before=""true""></span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportCABAC"">
+			<span class=""first"">CABAC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.cabac"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""iChannelId <= iAnalogChannelNum && oVideoCapa.bSupportEnableWD1"">
+            <span class=""first"">WD1</span>
+            <span>
+                <select class=""select"" ng-model=""oVideoParams.szWD1"">
+                    <option value=""true"" ng-bind=""oVideoLan.on""></option>
+                    <option value=""false"" ng-bind=""oVideoLan.off""></option>
+                </select>
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oVideoCapa.bSupportInputResolution"">
+        	<span class=""first"" ng-bind=""oVideoLan.inputResolution""></span>
+        	<span><input type=""text"" class=""text"" ng-model=""oVideoParams.inputResolution""  ng-disabled=""true""/></span>
+        </div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.streamType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.streamType"" ng-change=""changeStreamType()"">
+					<option value=""01"" ng-bind=""oVideoLan.mainStreamNormal""></option>
+					<option value=""02"" ng-bind=""oVideoLan.subStream""></option>
+					<option value=""03"" ng-bind=""oVideoLan.mainStreamEvent"" ng-if=""oVideoCapa.bSupportEvent""></option>
+					<option value=""04"" ng-bind=""oVideoLan.transcodedStream"" ng-if=""oVideoCapa.bSupportTransCode""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoType"" ng-disabled=""!oVideoCapa.bSupportSetvideoType"">
+					<option value=""0"" ng-bind=""oVideoLan.videoStream""></option>
+					<option value=""1"" ng-bind=""oVideoLan.videoAudio"" ng-show=""oVideoCapa.bSupportVideoAudio""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.resolution""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.resolution"" ng-options=""resolution.value as resolution.name for resolution in oVideoCapa.resolutions | wd1:oVideoParams.szWD1:oVideoCapa.bSupportEnableWD1"" ng-disabled=""oVideoCapa.resolutions.length <= 1""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.bitrateType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.bitrateType"" ng-change=""changeBitRate()"" ng-disabled=""!oVideoCapa.bSupportBitrateType || oDisabledCapa.bBitrateType"">
+					<option value=""vbr"" ng-bind=""oVideoLan.variable""></option>
+					<option value=""cbr"" ng-bind=""oVideoLan.constant""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoQuality""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoQuality"" ng-options=""videoQuality.value as videoQuality.name for videoQuality in oVideoCapa.videoQualitys"" ng-disabled=""oVideoParams.bitrateType === 'cbr' || oVideoCapa.videoQualitys.length <= 1 || oDisabledCapa.bVideoQuality""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.frameRate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.frameRate"" ng-options=""frameRate.value as frameRate.name for frameRate in oVideoCapa.frameRates""></select><label>&nbsp;fps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""!oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span><input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.maxBitrate"" input-valid=""oBitrateValid"" ng-disabled=""oVideoParams.smartCode === 'true' || oVideoCapa.minRate === oVideoCapa.maxRate""/>&nbsp;Kbps</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.maxBitrate"" ng-options=""oBitrate.value as oBitrate.value for oBitrate in oVideoCapa.maxBitrates"" ng-disabled=""oVideoParams.smartCode === 'true'""></select><label>&nbsp;Kbps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bAverageVideoBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.vbrAverage""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.iAverageBitrate"" input-valid=""oAverageBitrateValid"" />&nbsp;Kbps
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoEncoding"" ng-options=""videoEncoding for videoEncoding in oVideoCapa.videoEncodings"" ng-disabled=""oVideoCapa.videoEncodings.length <= 1""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode264"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmartCode"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode265"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec265""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmart265"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportProfile"">
+			<span class=""first"" ng-bind=""oVideoLan.profile""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.profile"" ng-options=""profile.value as profile.name for profile in oVideoCapa.profiles"" ng-disabled=""oDisabledCapa.bProfile""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportIFrame"">
+			<span class=""first"" ng-bind=""oVideoLan.iFrameInterval""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""3"" ng-model=""oVideoParams.iFrameInterval""  input-valid=""oIFrameValid"" ng-disabled=""oVideoCapa.minIntervalFrameI === oVideoCapa.maxIntervalFrameI || oDisabledCapa.bFrameInterval""/>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSVC"">
+			<span class=""first"">SVC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.svc"" ng-disabled=""oDisabledCapa.bSVC"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSmoothing"">
+			<span class=""first"" ng-bind=""oVideoLan.smoothing""></span>
+			<span class=""slider-span"">
+				<div slider current-value=""oVideoParams.smoothing"" class=""select"" show-box=""true""></div>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportAudio"">
+			<span class=""first"" ng-bind=""oVideoLan.audioEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.compressionType"" ng-options=""compressionType for compressionType in oVideoCapa.compressionTypes"" ng-disabled=""oVideoCapa.compressionTypes.length <= 1""></select>
+			</span>
+		</div>
+	</div>
+	<div>
+		<span ng-show=""bShowCopyToBtn"">
+			<div copy analog-id=""oAnalogId"" digital-id=""oDigitalId"" channel-id=""iChannelId"" lan=""oVideoLan"" dialog=""oDialog"" o-copy=""oCopyTo""></div>
+		</span>
+		<span>
+			<button ng-disabled=""!oVideoCapa.bChannelSupport || !oVideoCapa.bChannelSupport28181"" class=""btn btn-primary btn-save"" type=""button"" ng-click=""saveParams()"">
+				<span class=""img"">&nbsp;</span>
+				<span ng-bind=""oVideoLan.save""></span>
+			</button>
+		</span>
+	</div>
+</div>"
+11,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>3</retryLoginTime>
+</userCheck>"
+12,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>lock</lockStatus>
+<unlockTime>1797</unlockTime>
+<retryLoginTime>0</retryLoginTime>
+</userCheck>"
+13,Connection refused
+14,"ï»¿<?xml version='1.0' encoding='utf-8'?>
+<FileVersion>
+    <Platform name='win32'>
+        <WebVideoActiveX.ocx>3,0,7,500</WebVideoActiveX.ocx>
+        <PlayCtrl.dll>7,3,5,0</PlayCtrl.dll>
+        <StreamTransClient.dll>1,1,3,8</StreamTransClient.dll>
+        <SystemTransform.dll>2,5,3,4</SystemTransform.dll>
+        <NetStream.dll>1,0,5,57</NetStream.dll>
+        <AudioIntercom.dll>1,4,0,6</AudioIntercom.dll>
+        <localServiceControl>1.0.0.11</localServiceControl>
+    </Platform>
+</FileVersion>"
+15,"<!DOCTYPE html>
+<head>
+    <title>Not Found</title>
+    <link rel=""shortcut icon"" href=""data:image/x-icon;,"" type=""image/x-icon"">
+</head>
+<body>
+<h2>Access Error: 404 -- Not Found</h2>
+<pre></pre>
+</body>
+</html>
+"
+16,"<div class=""logo""></div>
+<ul id=""nav"" class=""nav"">
+	<li ng-show=""bSptCmPreview""><a ng-bind=""oLan.preview"" ng-click=""jumpTo('preview')""></a></li>
+	<li ng-show=""bSptCmRecord""><a ng-bind=""oLan.playback"" ng-click=""jumpTo('playback')""></a></li>
+	<li ng-show=""bSupportPicSearch""><a ng-bind=""oLan.picture"" ng-click=""jumpTo('download')""></a></li>
+	<li ng-show=""bSupportApplication""><a ng-bind=""oLan.application"" ng-click=""jumpTo('application')""></a></li>
+	<li><a ng-bind=""oLan.config"" ng-click=""jumpTo('config')""></a></li>
+</ul>
+<div class=""header-r"">
+	<div class=""downloadLocal left"" ng-click=""download()"" ng-show=""bShowDownloadLocalService"">
+		<div class=""icon""></div>
+        <label class=""pointer"" ng-bind=""oLan.pluginDownload""></label>
+        <!--<span tooltips msg=""{{oLan.localServiceDownloadTip}}"" y=""-25"" side=""5"" time=""10"">
+
+		</span>-->
+	</div>
+	<div class=""user"">
+		<div class=""icon""></div>
+		<label ng-bind=""username""></label>
+	</div>
+	<div class=""help"" ng-show=""bSupportHelp"" ng-click=""help()"">
+		<div class=""icon""></div>
+    	<label class=""pointer"" ng-bind=""oLan.help""></label>
+	</div>
+	<div class=""alarm"" ng-click=""openMixedTargetWindow()"" ng-if=""isIntelligentDisplayPageShow()"">
+        <div class=""icon""></div>
+        <label class=""pointer"" ng-bind=""oLan.alarmDisplay""></label>
+    </div>
+	<div class=""exit"" ng-click=""exit()"" >
+		<div class=""icon""></div>
+        <label class=""pointer"" ng-bind=""oLan.logout""></label>
+	</div>
+</div>
+<div class=""loginTimeoutImg"" ng-hide=""true""></div>"
+17,"<div class=""device"">
+	<div class=""device-icon""></div>
+	<div class=""device-name ellipsis"" title=""{{szDeviceName}}""><label ng-bind=""szDeviceName""></label></div>
+</div>
+<div class=""channel-list"">
+	<div class=""ch"" ng-repeat=""ch in aChlist"">
+		<div class=""ch-btns"">
+		    <div ng-show=""bSyncPlayStatus"" class=""ch-check""><input type=""checkbox"" class=""checkbox"" ng-disabled=""bSyncPlay"" ng-click=""checkChannel($event.target, $index)"" /></div>
+			<div ng-show=""!bSyncPlayStatus"" ng-class=""{true:'ch-btn playing', false:'ch-btn play'}[ch.bPlay]"" ng-click=""play($index)""></div>
+		</div>
+		<div ng-if=""bPreview || bAlarmShow"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" ng-dblclick=""play($index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div ng-if=""!bPreview && !bAlarmShow"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div class=""ch-btns recordContainer"">
+			<div ng-show=""bPreview && !bFirefoxNoPlugin && bSupportRecord"" ng-class=""{true:'ch-btn recording', false:'ch-btn record'}[ch.bRecord]"" ng-click=""record($index)""></div>
+		</div>
+		<div ng-if=""bPreview && ch.szType!='zero'"" class=""ch-btns"" stream stream-type=""ch.iStreamType"" lan=""oLan"" num=""iStreamNum"" on-change=""changeStream"" channel-index=""{{$index}}""></div>
+        <div class=""outlineContainer"" ng-show=""(bPreview || bAlarmShow) && !ch.bOnline""></div>
+    </div>
+</div>"
+18,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body ng-keypress=""docPress($event)"" ng-controller=""loginController"" ng-cloak class=""login-body ng-cloak"">
+<div class=""login"" id=""login"">
+	<div class=""top"">
+		<div class=""logo""></div>
+    	<div class=""language"">
+			<div class=""language-show"" ng-click=""showLanguageList($event)""><span class=""current-language"" id=""current_language""></span></div>
+			<div class=""language-list"" id=""language_list"" ng-click=""changeLanguage($event)""></div>
+		</div>
+	</div>
+	<table cellspacing=""0"" cellpadding=""0"" border=""0"" class=""middle"">
+		<tr>
+			<td class=""login-l"">&nbsp;</td>
+			<td class=""login-m"">
+				<div class=""login-part"">
+					<div class=""line""></div>
+					<div class=""login-error"">
+						<div class=""inputValidTip"" ng-show=""szErrorTip!=''""><i class='error'></i><label>{{szErrorTip}}</label></div>
+					</div>
+					<div class=""login-user"">
+						<input type=""text"" class=""login-input"" id=""username"" ng-model=""username"" maxlength=""32"" autocomplete=""off"" placeholder=""{{oLan.username}}"" />
+						<i class=""icon-user""></i>
+					</div>
+					<div class=""login-item"">
+						<input type=""password"" class=""login-input"" id=""password"" ng-model=""password"" maxlength=""16"" placeholder=""{{oLan.password}}"" pigsney />
+						<i class=""icon-pass""></i>
+					</div>
+					<div class=""login-item bottom"">
+					    <span class=""pwd-link"" ng-bind=""oLan.forgetPwd"" ng-show=""oCap.bSptGuidImport || oCap.bSptQAReset || oCap.bSupportWithSecurityEmail"" ng-click=""forgetPwd()""></span>
+						<button type=""button"" class=""btn btn-primary login-btn"" ng-click=""login()""><label ng-bind=""oLan.login""></label></button>
+					</div>
+					<!--<div class=""login-item anonymous"" ng-show=""anonymous"">
+						<span ng-bind=""oLan.anonymous"" ng-click=""login('anonymous')""></span>
+					</div>-->
+				</div>
+			</td>
+			<td class=""login-r"">&nbsp;</td>
+		</tr>
+	</table>
+	<div class=""footer"" id=""footer""></div>
+</div>
+<div id=""active"" class=""msg-content-wrap"">
+    <div class=""msg-content"">
+        <div class=""password"">
+        	<span class=""desc""><label ng-bind=""oLan.username""></label></span>
+        	<span><label ng-bind=""activeUsername""></label></span>
+        </div>
+        <div password lan=""oLan"" o-password=""oActivePwd"" b-loginpage=""true"" user-name=""activeUsername"" spec-char=""true"" ps-length=""16"" ps-strength=""true"" hide-default=""true""></div>
+    </div>
+</div>
+<div id=""wifiConfig"" class=""msg-content-wrap"">
+    <div class=""msg-content"">
+        <div ng-show=""oCap.bSupportActive"">
+			<!--<div class=""item"">
+				<span><input type=""checkbox"" class=""checkbox"" ng-model=""oParams.bActivePsw""/><label ng-bind=""oLan.useActivePwd""></label></span>
+			</div>-->
+			<div class=""item"">
+				<span class=""channelPwdFirst"" ng-bind=""oLan.ipcActivePwd"" title=""{{oLan.ipcActivePwd}}""></span>
+				<span>
+					<input id=""ipcActivePassword"" type=""password"" ng-disabled=""oParams.bActivePsw"" class=""wifiSelect"" ng-model=""oParams.szPwd"" input-valid=""oParamsValid.oPassword"" maxlength=""16"" pigsney />
+				</span>
+			</div>
+			<p class=""txt-desc""><span ng-bind=""oLan.passwordValidTips""></span></p>
+		</div>
+		<div class=""item title"" ng-show=""oWifi.bSupportWifiRegion || oWifi.bSupportWifiEnhance"">
+			<span ng-bind=""oLan.wifiConfig""></span>
+		</div>
+        <div class=""password"" ng-show=""oWifi.bSupportWifiRegion"">
+            <span class=""wifiArea""><label ng-bind=""oLan.areaCountry""></label></span>
+            <span><select class=""wifiSelect"" ng-model=""oWifi.szWifiRegion"" ng-options=""oArea.value as oArea.name for oArea in oWifi.aAreaCountryList""></select></span>
+        </div>
+        <div class=""item"" ng-show=""oWifi.bSupportWifiEnhance"">
+            <span><input type=""checkbox"" class=""checkbox"" ng-model=""oWifi.bWifiEnhance""/><label ng-bind=""oLan.enableWifiEnhance""></label></span>
+        </div>
+    </div>
+</div>
+<div id=""main_plugin"" class=""no-window""></div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+</html>"
+19,"<div class=""device"">
+	<div class=""device-icon""></div>
+	<div class=""device-name ellipsis"" title=""{{szDeviceName}}""><label ng-bind=""szDeviceName""></label></div>
+</div>
+<div class=""channel-list"">
+	<div class=""ch"" ng-repeat=""ch in aChlist"">
+		<div class=""ch-btns"">
+		    <div ng-show=""bSyncPlayStatus"" class=""ch-check""><input type=""checkbox"" class=""checkbox"" ng-disabled=""bSyncPlay"" ng-click=""checkChannel($event.target, $index)"" /></div>
+			<div ng-show=""!bSyncPlayStatus"" ng-class=""{true:'ch-btn playing', false:'ch-btn play'}[ch.bPlay]"" ng-click=""play($index)""></div>
+		</div>
+		<div ng-if=""bPreview"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" ng-dblclick=""play($index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div ng-if=""!bPreview"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div class=""ch-btns"">
+			<div ng-show=""bPreview && !bFirefoxNoPlugin && bSupportRecord"" ng-class=""{true:'ch-btn recording', false:'ch-btn record'}[ch.bRecord]"" ng-click=""record($index)""></div>
+		</div>
+		<div ng-if=""bPreview && ch.szType!='zero'"" class=""ch-btns"" stream stream-type=""ch.iStreamType"" lan=""oLan"" num=""iStreamNum"" on-change=""changeStream"" channel-index=""{{$index}}""></div>
+	</div>
+</div>"
+20,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body class=""config"" id=""config"">
+	<div class=""layout-north ng-cloak"" id=""header"" ng-controller=""headerController"" ng-cloak>
+		<div class=""header"" ng-include=""'common/header.asp'"" onload=""headerLoaded();""></div>
+	</div>
+	<div class=""layout-west ng-cloak"" id=""menu"" ng-controller=""menuController"" ng-cloak>
+		<div class=""sdmenu"" onselectstart=""return false;"" ng-include=""'common/menu.asp'"" onload=""menuLoaded();""></div>
+	</div>
+	<div class=""layout-center"">
+		<div class=""layout-center-inner"">
+			<div id=""view"" class=""view""></div>
+		</div>
+		<div class=""layout-south-inner"">
+			<div class=""footer"" id=""footer""></div>
+		</div>
+	</div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+	document.write(""<script src='../script/lib/jquery/My97DatePicker/WdatePicker.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+<script for=PreviewActiveX event=""GetSelectWndInfo(SelectWndInfo)"">
+	GetSelectWndInfo(SelectWndInfo);
+</script>
+<script for=PreviewActiveX event=""PluginEventHandler(iEventType, iParam1, iParam2)"">
+	PluginEventHandler(iEventType, iParam1, iParam2);
+</script>
+</html>"
+21,"<div id=""basicPort"" ng-controller=""basicPortController"">
+    <div class=""items"">
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.httpPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.rtspPort""></span>
+            <span>
+                <input ng-model=""oParams.szRtspPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oRtspPort"" />
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oCap.bSptHttps"">
+            <span class=""first"" ng-bind=""oLan.httpsPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpsPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpsPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.sdkPort""></span>
+            <span>
+                <input ng-model=""oParams.szServicePort"" type=""text"" class=""text"" input-valid=""oParamsValid.oSdkPort"" />
+            </span>
+        </div>
+		<div class=""item"" ng-show=""oCap.bSptSdkTLS"">
+            <span class=""first"" ng-bind=""oLan.sdkTLSPort""></span>
+            <span>
+                <input ng-model=""oParams.szSdkTLSPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oSdkTLSPort"" />
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oCap.bSptIOT"">
+            <span class=""first"" ng-bind=""oLan.IOTPort""></span>
+            <span>
+                <input ng-model=""oParams.szIOTPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oIOTPort"" />
+            </span>
+        </div>
+    </div>
+	<button class=""btn btn-primary btn-save"" type=""button"" ng-click=""save()"" ng-disabled=""oCap.bSupportModify"">
+        <span class=""img"">&nbsp;</span>
+        <span ng-bind=""oLan.save""></span>
+    </button>
+</div>"
+22,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>1</retryLoginTime>
+</userCheck>"
+23,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body class=""preview"">
+<div class=""layout-north"" id=""header"" ng-controller=""headerController"">
+	<div class=""header"" ng-include=""'common/header.asp'"" onload=""headerLoaded()""></div>
+</div>
+<div class=""layout-west"" id=""channel"" ng-controller=""channelController"">
+	<div class=""channel"" ng-include=""'common/channel.asp'"" onload=""channelLoaded()""></div>
+</div>
+<div class=""layout-center"">
+	<div class=""layout-center-inner"" id=""plugin"" ng-controller=""pluginController"">
+		<div class=""plugin"" ng-include=""'common/plugin.asp'"" onload=""pluginLoaded()""></div>
+	</div>
+	<div class=""layout-south-inner"" id=""tool"" ng-controller=""toolController"">
+		<div class=""tool"" ng-include=""'common/tool.asp'""  onload=""toolLoaded()""></div>
+	</div>
+</div>
+<div class=""layout-east"" id=""ptz"" ng-controller=""ptzController"">
+	<div class=""ptz"" ng-include=""'common/ptz.asp'"" onload=""ptzLoaded()""></div>
+</div>
+<div class=""layout-south"">
+	<div class=""footer"" id=""footer""></div>
+</div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+<script for=PreviewActiveX event=""GetSelectWndInfo(SelectWndInfo)"">
+	GetSelectWndInfo(SelectWndInfo);
+</script>
+<script for=PreviewActiveX event=""PluginEventHandler(iEventType, iParam1, iParam2)"">
+    PluginEventHandler(iEventType, iParam1, iParam2);
+</script>
+<script for=PreviewActiveX event=""ZoomInfoCallback(szZoomInfo)"">
+	ZoomInfoCallback(szZoomInfo);
+</script>
+<script for=PreviewActiveX event=""SetZeroChanEnlarge(EnlargeInfo)"">
+	SetZeroChanEnlarge(EnlargeInfo);
+</script>
+<script for=PreviewActiveX event=""MouseEvent(szXml)"">
+	MouseEvent(szXml);
+</script>
+<script for=PreviewActiveX event=""KeyBoardEvent(szXml)"">
+	KeyBoardEvent(szXml);
+</script>
+</html>"
+24,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>5</retryLoginTime>
+</userCheck>"
+25,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<Language version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<type>chinese</type>
+</Language>
+"
+26,"<div class=""tool-l"">
+	<button id=""btn_wnd_split"" ng-disabled=""bSyncPlayStatus"" ng-show=""oBtnShow.bWndSplit"" class=""btn"" type=""button""><i ng-class=""{1:'icon-wnd-1', 2:'icon-wnd-2', 3:'icon-wnd-3', 4:'icon-wnd-4'}[iWndSplitMode]""></i><i class=""icon-sel""></i></button>
+	<span pop-menu target-id=""btn_wnd_split"" on-menu-change=""onWndSplit"" type=""1""></span>
+	<span ng-if=""bPreview"">
+		<button ng-show=""oBtnShow.bWndSize"" id=""btn_size_change"" class=""btn"" type=""button""><i class=""icon-size-4""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_size_change"" on-menu-change=""onSizeChange"" type=""3""></span>
+		<button id=""btn_stream_type"" class=""btn"" type=""button"" title=""{{oLanTool.streamType}}""><i ng-class=""{0:'icon-stream-1', 1:'icon-stream-2', 2:'icon-stream-3'}[iStreamType]""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_stream_type"" on-menu-change=""onStreamChange"" type=""2"" num=""iStreamNum"" lan=""oLanTool""></span>
+		<button ng-if=""false"" id=""btn_plugin_type"" class=""btn"" type=""button""><i class=""icon-plugin-4""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_plugin_type"" on-menu-change=""onPluginChange"" type=""4""></span>
+		<button ng-hide=""iTalkNum===0"" id=""btn_talk_change"" class=""btn"" type=""button"" title=""{{oBtnTitle.talkTips}}""><i class=""icon-talk""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_talk_change"" on-menu-change=""onTalkChange"" type=""5"" num=""iTalkNum"" lan=""oLanTool""></span>
+	</span>
+	<span ng-if=""!bPreview && bSupportSmartSearch"">
+		<button id=""btn_draw_region"" ng-show=""oBtnShow.bDrawRegion"" class=""btn"" type=""button"" ng-disabled=""bSyncPlayStatus || 1!==iWndSplitMode || !oWndParam.bPlay""><i ng-class=""{1:'icon-draw-1', 2:'icon-draw-2', 3:'icon-draw-3', 4:'icon-draw-4'}[oWndParam.iSmartDrawType]""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_draw_region"" on-menu-change=""onDrawSmartRegion"" type=""6"" lan=""oLanTool""></span>
+	</span>
+	<span>
+		<button class=""btn"" ng-click=""changeEagleEyeMode()"" ng-disabled=""bSyncPlayStatus || oBtnDisabled.bEagleEye"" title=""{{oBtnTitle.szEagleEyeMode}}""><i ng-class=""{true:'icon-eagleEye on', false:'icon-eagleEye'}[oBtnClass.bEagleEyePTZ]""></i></button>
+	</span>
+</div>
+<div class=""tool-m"" ng-if=""!bPreview"">
+	<button id=""btn_trans_code"" class=""btn"" type=""button"" title=""{{oLanTool.transcodingPlayback}}"" ng-show=""oBtnShow.bTranscoding"" ng-disabled=""oBtnDisabled.bTranscoding""><i ng-class=""{true:'icon-transcoding on', false:'icon-transcoding'}[oBtnClass.bTranscoding]""></i><i class=""icon-sel""></i></button>
+	<span pop-trans-code target-id=""btn_trans_code"" on-open-trans-code=""onOpenTransCode"" on-change-trans-code=""onChangeTransCode"" trans-code=""oBtnClass.bTranscoding"" trans-code-resolution=""aTransCodeResolution"" lan=""oLanTool""></span>
+	<button class=""btn"" type=""button"" title=""{{oBtnTitle.szReversePlay}}"" ng-click=""reversePlay()"" ng-disabled=""oBtnClass.bTranscoding || bSyncPlayStatus"" ng-show=""oBtnShow.bReversePlay""><i ng-class=""{true:'icon-pause', false:'icon-reverseplay'}[oBtnClass.bReversePlay]""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.stop}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""stop()""><i class=""icon-stop""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.slowForward}}"" ng-click=""slow()"" ng-disabled=""oBtnDisabled.bSlow""><i class=""icon-slow""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPlay}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""play()""><i ng-class=""{true:'icon-pause', false:'icon-play'}[oBtnClass.bPlay]""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.fastForward}}"" ng-click=""fast()"" ng-disabled=""oBtnDisabled.bFast""><i class=""icon-fast""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.singleFrame}}"" ng-click=""frame()"" ng-disabled=""oBtnDisabled.bFrame""><i class=""icon-frame""></i></button>
+</div>
+<div class=""tool-r"">
+	<span ng-if=""bSupportPos"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPos}}"" ng-click=""enablePos()"" ng-disabled=""oBtnDisabled.bPos""><i ng-class=""{true:'icon-pos on', false:'icon-pos'}[oBtnClass.bEnablePos]""></i></button>
+	</span>
+	<span ng-if=""bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szHasPlay}}"" ng-click=""playAll()""><i ng-class=""{true:'icon-stopplayall', false:'icon-playall'}[oBtnClass.bHasPlay]""></i></button>
+        <button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-disabled=""oBtnDisabled.bCapture"" ng-click=""capture()""><i class=""icon-capture""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szHasRecord}}"" ng-disabled=""!oBtnClass.bHasPlay"" ng-click=""recordAll()""><i ng-class=""{true:'icon-record on', false:'icon-record'}[oBtnClass.bHasRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.prevPage}}"" ng-disabled=""oBtnDisabled.bPrevPage"" ng-click=""prevPage()""><i class=""icon-prev""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.nextPage}}"" ng-disabled=""oBtnDisabled.bNextPage"" ng-click=""nextPage()""><i class=""icon-next""></i></button>
+    </span>
+    <span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.stopAll}}"" ng-click=""stopAll()"" ng-show=""!bSyncPlayStatus""><i class=""icon-stopall""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-click=""capture()"" ng-disabled=""oBtnDisabled.bCapture""><i class=""icon-capture""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szClip}}"" ng-disabled=""oBtnDisabled.bRecord"" ng-click=""record()""><i ng-class=""{true:'icon-clip on', false:'icon-clip'}[oBtnClass.bRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<!--<button class=""btn"" type=""button"" ng-show=""oBtnShow.bPicDownload""><i class=""icon-picdownload""></i></button>-->
+    </span>
+	<button id=""btn_sound"" class=""btn"" type=""button"" title=""{{oBtnTitle.szSound}}"" ng-disabled=""oBtnDisabled.bSound""><i ng-class=""{true:'icon-sound on', false:'icon-sound'}[oBtnClass.bSound]""></i><i class=""icon-sel""></i></button>
+	<span pop-sound target-id=""btn_sound"" on-change-sound=""onChangeSound"" on-open-sound=""onOpenSound"" sound=""oBtnClass.bSound""></span>
+	<span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.download}}"" ng-click=""openDownload()""><i class=""icon-download""></i></button>
+	</span>
+    <button class=""btn"" type=""button"" title=""{{oLanTool.fullScreen}}"" ng-click=""fullScreen()""><i class=""icon-full""></i></button>
+</div>"
+27,"<div id=""tabs"" class=""event tabs-1"">
+	<ul id=""event"" ng-controller=""eventController"">
+		<li module=""eventMotion""><a href=""config/event/eventMotion.asp"" hidefocus ng-bind=""oLan.motion""></a></li>
+		<li module=""eventVideoTamper""><a href=""config/event/eventVideoTamper.asp"" hidefocus ng-bind=""oLan.videoTamper""></a></li>
+        <li module=""eventVideoLoss""><a href=""config/event/eventVideoLoss.asp"" hidefocus ng-bind=""oLan.videoLoss""></a></li>
+		<li module=""eventAlarmInput"" ng-if=""oTab.bSupportAlarmIn""><a href=""config/event/eventAlarmInput.asp"" hidefocus ng-bind=""oLan.alarmInput""></a></li>
+		<li module=""eventAlarmOutput"" ng-if=""oTab.bSupportAlarmOut""><a href=""config/event/eventAlarmOutput.asp"" hidefocus ng-bind=""oLan.alarmOutput""></a></li>
+		<li module=""eventException""><a href=""config/event/eventException.asp"" hidefocus ng-bind=""oLan.exception""></a></li>
+	</ul>
+</div>"
+28,"ï»¿<?xml version='1.0' encoding='utf-8'?>
+<FileVersion>
+    <Platform name='win32'>
+        <npWebVideoPlugin.dll>3,0,6,46</npWebVideoPlugin.dll>
+        <WebVideoActiveX.ocx>3,0,6,46</WebVideoActiveX.ocx>
+        <PlayCtrl.dll>7,3,5,0</PlayCtrl.dll>
+        <StreamTransClient.dll>1,1,3,8</StreamTransClient.dll>
+        <SystemTransform.dll>2,5,3,4</SystemTransform.dll>
+        <NetStream.dll>1,0,5,46</NetStream.dll>
+        <AudioIntercom.dll>1,4,0,6</AudioIntercom.dll>
+    </Platform>
+</FileVersion>"
+29,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<Language version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<type>english</type>
+</Language>
+"
+30,"<div id=""video"" ng-controller=""videoController"">
+	<div class=""items"">
+		<div class=""item"">
+			<span channel analog=""oAnalog"" digital=""oDigital"" analog-num=""iAnalogChannelNum"" channel-id=""iChannelId"" lan=""oVideoLan"" df-before=""true""></span>
+		</div>
+		<div class=""item"" ng-show=""oSpeedUpParams.bSupportSpeedUp"">
+            <span class=""first"" ng-bind=""oVideoLan.streamAdaption""></span>
+            <span>
+                <input type=""checkbox"" class=""checkbox"" ng-model=""oSpeedUpParams.bSmartSpeedUp"" ng-click=""showRebootTip()""/>
+            </span>
+        </div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportCABAC"">
+			<span class=""first"">CABAC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.cabac"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""iChannelId <= iAnalogChannelNum && oVideoCapa.bSupportEnableWD1"">
+            <span class=""first"">WD1</span>
+            <span>
+                <select class=""select"" ng-model=""oVideoParams.szWD1"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+                    <option value=""true"" ng-bind=""oVideoLan.on""></option>
+                    <option value=""false"" ng-bind=""oVideoLan.off""></option>
+                </select>
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oVideoCapa.bSupportInputResolution"">
+        	<span class=""first"" ng-bind=""oVideoLan.inputResolution""></span>
+        	<span><input type=""text"" class=""text"" ng-model=""oVideoParams.inputResolution""  ng-disabled=""true""/></span>
+        </div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.streamType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.streamType"" ng-change=""changeStreamType()"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+					<option value=""01"" ng-bind=""oVideoLan.mainStreamNormal""></option>
+					<option value=""02"" ng-bind=""oVideoLan.subStream""></option>
+					<option value=""03"" ng-bind=""oVideoLan.mainStreamEvent"" ng-if=""oVideoCapa.bSupportEvent""></option>
+					<option value=""04"" ng-bind=""oVideoLan.transcodedStream"" ng-if=""oVideoCapa.bSupportTransCode""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoType"" ng-disabled=""!oVideoCapa.bSupportSetvideoType || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""0"" ng-bind=""oVideoLan.videoStream""></option>
+					<option value=""1"" ng-bind=""oVideoLan.videoAudio"" ng-show=""oVideoCapa.bSupportVideoAudio""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.resolution""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.resolution"" ng-options=""resolution.value as resolution.name for resolution in oVideoCapa.resolutions | wd1:oVideoParams.szWD1:oVideoCapa.bSupportEnableWD1"" ng-disabled=""oVideoCapa.resolutions.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.bitrateType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.bitrateType"" ng-change=""changeBitRate()"" ng-disabled=""!oVideoCapa.bSupportBitrateType || oDisabledCapa.bBitrateType || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp) || (bAnalogChannel && oVideoParams.smartCode === 'true')"">
+					<option value=""vbr"" ng-bind=""oVideoLan.variable""></option>
+					<option value=""cbr"" ng-bind=""oVideoLan.constant""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoQuality""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoQuality"" ng-options=""videoQuality.value as videoQuality.name for videoQuality in oVideoCapa.videoQualitys"" ng-disabled=""oVideoParams.bitrateType === 'cbr' || oVideoCapa.videoQualitys.length <= 1 || oDisabledCapa.bVideoQuality || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.frameRate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.frameRate"" ng-options=""frameRate.value as frameRate.name for frameRate in oVideoCapa.frameRates"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp""></select><label>&nbsp;fps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""!oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span><input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.maxBitrate"" input-valid=""oBitrateValid"" ng-disabled=""oVideoParams.smartCode === 'true' || oVideoCapa.minRate === oVideoCapa.maxRate || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"" ng-change=""handleMaxBitrateChange()""/>&nbsp;Kbps</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.maxBitrate"" ng-options=""oBitrate.value as oBitrate.value for oBitrate in oVideoCapa.maxBitrates"" ng-disabled=""oVideoParams.smartCode === 'true' || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select><label>&nbsp;Kbps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bAverageVideoBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.vbrAverage""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.iAverageBitrate"" input-valid=""oAverageBitrateValid"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"" />&nbsp;Kbps
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoEncoding"" ng-options=""videoEncoding for videoEncoding in oVideoCapa.videoEncodings"" ng-disabled=""oVideoCapa.videoEncodings.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp) ""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode264"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmartCode || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode265"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec265""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmart265 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportProfile"">
+			<span class=""first"" ng-bind=""oVideoLan.profile""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.profile"" ng-options=""profile.value as profile.name for profile in oVideoCapa.profiles"" ng-disabled=""oDisabledCapa.bProfile || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportIFrame"">
+			<span class=""first"" ng-bind=""oVideoLan.iFrameInterval""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""3"" ng-model=""oVideoParams.iFrameInterval""  input-valid=""oIFrameValid"" ng-disabled=""oVideoCapa.minIntervalFrameI === oVideoCapa.maxIntervalFrameI || oDisabledCapa.bFrameInterval || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""/>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSVC"">
+			<span class=""first"">SVC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.svc"" ng-disabled=""oDisabledCapa.bSVC || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSmoothing"">
+			<span class=""first"" ng-bind=""oVideoLan.smoothing""></span>
+			<span class=""slider-span"">
+				<div slider current-value=""oVideoParams.smoothing"" class=""select"" show-box=""true"" dis=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp""></div>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportAudio"">
+			<span class=""first"" ng-bind=""oVideoLan.audioEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.compressionType"" ng-options=""compressionType for compressionType in oVideoCapa.compressionTypes"" ng-disabled=""oVideoCapa.compressionTypes.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+	</div>
+	<div>
+		<span>
+			<div copy analog-id=""oAnalogId"" digital-id=""oDigitalId"" channel-id=""iChannelId"" analog-num=""iAnalogChannelNum"" lan=""oVideoLan"" dialog=""oDialog"" o-copy=""oCopyTo""></div>
+		</span>
+		<span>
+			<button ng-disabled=""!oVideoCapa.bChannelSupport || !oVideoCapa.bChannelSupport28181"" class=""btn btn-primary btn-save"" type=""button"" ng-click=""saveParams()"">
+				<span class=""img"">&nbsp;</span>
+				<span ng-bind=""oVideoLan.save""></span>
+			</button>
+		</span>
+	</div>
+</div>
+"
+31,"<div id=""video"" ng-controller=""videoController"">
+	<div class=""items"">
+		<div class=""item"">
+			<span channel analog=""oAnalog"" digital=""oDigital"" analog-num=""iAnalogChannelNum"" channel-id=""iChannelId"" lan=""oVideoLan"" df-before=""true""></span>
+		</div>
+		<div class=""item"" ng-show=""oSpeedUpParams.bSupportSpeedUp"">
+            <span class=""first"" ng-bind=""oVideoLan.streamAdaption""></span>
+            <span>
+                <input type=""checkbox"" class=""checkbox"" ng-model=""oSpeedUpParams.bSmartSpeedUp"" ng-click=""showRebootTip()""/>
+            </span>
+        </div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportCABAC"">
+			<span class=""first"">CABAC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.cabac"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""iChannelId <= iAnalogChannelNum && oVideoCapa.bSupportEnableWD1"">
+            <span class=""first"">WD1</span>
+            <span>
+                <select class=""select"" ng-model=""oVideoParams.szWD1"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+                    <option value=""true"" ng-bind=""oVideoLan.on""></option>
+                    <option value=""false"" ng-bind=""oVideoLan.off""></option>
+                </select>
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oVideoCapa.bSupportInputResolution"">
+        	<span class=""first"" ng-bind=""oVideoLan.inputResolution""></span>
+        	<span><input type=""text"" class=""text"" ng-model=""oVideoParams.inputResolution""  ng-disabled=""true""/></span>
+        </div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.streamType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.streamType"" ng-change=""changeStreamType()"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"">
+					<option value=""01"" ng-bind=""oVideoLan.mainStreamNormal""></option>
+					<option value=""02"" ng-bind=""oVideoLan.subStream""></option>
+					<option value=""03"" ng-bind=""oVideoLan.mainStreamEvent"" ng-if=""oVideoCapa.bSupportEvent""></option>
+					<option value=""04"" ng-bind=""oVideoLan.transcodedStream"" ng-if=""oVideoCapa.bSupportTransCode""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoType"" ng-disabled=""!oVideoCapa.bSupportSetvideoType || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""0"" ng-bind=""oVideoLan.videoStream""></option>
+					<option value=""1"" ng-bind=""oVideoLan.videoAudio"" ng-show=""oVideoCapa.bSupportVideoAudio""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.resolution""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.resolution"" ng-options=""resolution.value as resolution.name for resolution in oVideoCapa.resolutions | wd1:oVideoParams.szWD1:oVideoCapa.bSupportEnableWD1"" ng-disabled=""oVideoCapa.resolutions.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.bitrateType""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.bitrateType"" ng-change=""changeBitRate()"" ng-disabled=""!oVideoCapa.bSupportBitrateType || oDisabledCapa.bBitrateType || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp) || (bAnalogChannel && oVideoParams.smartCode === 'true')"">
+					<option value=""vbr"" ng-bind=""oVideoLan.variable""></option>
+					<option value=""cbr"" ng-bind=""oVideoLan.constant""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoQuality""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoQuality"" ng-options=""videoQuality.value as videoQuality.name for videoQuality in oVideoCapa.videoQualitys"" ng-disabled=""oVideoParams.bitrateType === 'cbr' || oVideoCapa.videoQualitys.length <= 1 || oDisabledCapa.bVideoQuality || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.frameRate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.frameRate"" ng-options=""frameRate.value as frameRate.name for frameRate in oVideoCapa.frameRates"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp""></select><label>&nbsp;fps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""!oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span><input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.maxBitrate"" input-valid=""oBitrateValid"" ng-disabled=""oVideoParams.smartCode === 'true' || oVideoCapa.minRate === oVideoCapa.maxRate || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""/>&nbsp;Kbps</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportBitrateSelect && oShowCapa.bMaxBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.maxBitrate""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.maxBitrate"" ng-options=""oBitrate.value as oBitrate.value for oBitrate in oVideoCapa.maxBitrates"" ng-disabled=""oVideoParams.smartCode === 'true' || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select><label>&nbsp;Kbps</label>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bAverageVideoBitrate"">
+			<span class=""first"" ng-bind=""oVideoLan.vbrAverage""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""5"" ng-model=""oVideoParams.iAverageBitrate"" input-valid=""oAverageBitrateValid"" ng-disabled=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp"" />&nbsp;Kbps
+			</span>
+		</div>
+		<div class=""item"">
+			<span class=""first"" ng-bind=""oVideoLan.videoEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.videoEncoding"" ng-options=""videoEncoding for videoEncoding in oVideoCapa.videoEncodings"" ng-disabled=""oVideoCapa.videoEncodings.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp) ""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode264"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmartCode || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oShowCapa.bSmartCode265"">
+			<span class=""first"" ng-bind=""oVideoLan.smartCodec265""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.smartCode"" ng-change=""changeSmartCodec()"" ng-disabled=""oVideoCapa.bDisabledSmart265 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportProfile"">
+			<span class=""first"" ng-bind=""oVideoLan.profile""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.profile"" ng-options=""profile.value as profile.name for profile in oVideoCapa.profiles"" ng-disabled=""oDisabledCapa.bProfile || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportIFrame"">
+			<span class=""first"" ng-bind=""oVideoLan.iFrameInterval""></span>
+			<span>
+				<input type=""text"" class=""text"" maxlength=""3"" ng-model=""oVideoParams.iFrameInterval""  input-valid=""oIFrameValid"" ng-disabled=""oVideoCapa.minIntervalFrameI === oVideoCapa.maxIntervalFrameI || oDisabledCapa.bFrameInterval || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""/>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSVC"">
+			<span class=""first"">SVC</span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.svc"" ng-disabled=""oDisabledCapa.bSVC || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)"">
+					<option value=""true"" ng-bind=""oVideoLan.on""></option>
+					<option value=""false"" ng-bind=""oVideoLan.off""></option>
+				</select>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportSmoothing"">
+			<span class=""first"" ng-bind=""oVideoLan.smoothing""></span>
+			<span class=""slider-span"">
+				<div slider current-value=""oVideoParams.smoothing"" class=""select"" show-box=""true"" dis=""oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp""></div>
+			</span>
+		</div>
+		<div class=""item"" ng-show=""oVideoCapa.bSupportAudio"">
+			<span class=""first"" ng-bind=""oVideoLan.audioEncoding""></span>
+			<span>
+				<select class=""select"" ng-model=""oVideoParams.compressionType"" ng-options=""compressionType for compressionType in oVideoCapa.compressionTypes"" ng-disabled=""oVideoCapa.compressionTypes.length <= 1 || (oSpeedUpParams.bSupportSpeedUp && oSpeedUpParams.oriSmartSpeedUp)""></select>
+			</span>
+		</div>
+	</div>
+	<div>
+		<span>
+			<div copy analog-id=""oAnalogId"" digital-id=""oDigitalId"" channel-id=""iChannelId"" analog-num=""iAnalogChannelNum"" lan=""oVideoLan"" dialog=""oDialog"" o-copy=""oCopyTo""></div>
+		</span>
+		<span>
+			<button ng-disabled=""!oVideoCapa.bChannelSupport || !oVideoCapa.bChannelSupport28181"" class=""btn btn-primary btn-save"" type=""button"" ng-click=""saveParams()"">
+				<span class=""img"">&nbsp;</span>
+				<span ng-bind=""oVideoLan.save""></span>
+			</button>
+		</span>
+	</div>
+</div>
+"
+32,"<div id=""tabs"" class=""network tabs-1"">
+	<ul id=""advanced"" ng-controller=""advancedController"">
+	    <li ng-if=""oAdvancedCap.bSupportSnmp"" module=""advancedSnmp""><a href=""config/network/advancedSnmp.asp"" hidefocus>SNMP</a></li>
+        <li module=""advancedEmail""><a href=""config/network/advancedEmail.asp"" hidefocus>Email</a></li>
+        <li ng-if=""oAdvancedCap.bSupportPlatform"" module=""advancedPlatform""><a href=""config/network/advancedPlatform.asp"" hidefocus ng-bind=""oLan.platformAccess""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportFtp"" module=""advancedFtp""><a href=""config/network/advancedFtp.asp"" hidefocus>FTP</a></li>
+        <li ng-if=""oAdvancedCap.bSupportHttps"" module=""advancedHttps""><a href=""config/network/advancedHttps.asp"" hidefocus ng-bind=""oLan.netService""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportQos"" module=""advancedQos""><a href=""config/network/advancedQos.asp"" hidefocus>QoS</a></li>
+        <li ng-if=""oAdvancedCap.m_bSupportWAN"" module=""advancedWAN""><a href=""config/network/advancedWAN.asp"" hidefocus>WAN</a></li>
+        <li ng-if=""oAdvancedCap.bSupport8021x"" module=""advanced8021x""><a href=""config/network/advanced8021x.asp"" hidefocus>802.1x</a></li>
+        <li ng-if=""oAdvancedCap.bSupportWifi"" module=""advancedWifi""><a href=""config/network/advancedWifi.asp"" hidefocus>Wi-Fi</a></li>
+        <!--<li ng-if=""oAdvancedCap.bSupportWLANAP"" module=""advancedWLANAP""><a href=""config/network/advancedWLANAP.asp"" hidefocus ng-bind=""oLan.wlanap""></a></li>-->
+        <li ng-if=""oAdvancedCap.bSupport28181Service"" module=""advanced28181Service""><a href=""config/network/advanced28181Service.asp"" hidefocus ng-bind=""oLan.service28181""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportMulticast"" module=""advancedMulticast""><a href=""config/network/advancedMulticast.asp"" hidefocus ng-bind=""oLan.activeMulticase""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportRtmp"" module=""advancedRtmp""><a href=""config/network/advancedRtmp.asp"" hidefocus ng-bind=""oLan.rtmpConfig""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportNetworkOther"" module=""advancedOther""><a href=""config/network/advancedOther.asp"" hidefocus ng-bind=""oLan.other""></a></li>
+	    <li ng-if=""oAdvancedCap.bSupportProtocolConfig"" module=""advancedProtocolConfig""><a href=""config/network/advancedProtocolConfig.asp"" hidefocus ng-bind=""oLan.integrationProtocol""></a></li>
+		<li ng-if=""oAdvancedCap.bSupportNpq"" module=""advancedNpq""><a href=""config/network/advancedNpq.asp"" hidefocus ng-bind=""oLan.instantPreviews""></a></li>
+		<li ng-if=""oAdvancedCap.bSupportLogServer"" module=""advancedLogServer""><a href=""config/network/advancedLogServer.asp"" hidefocus ng-bind=""oLan.logServer""></a></li>
+		<li ng-if=""oCustom.bSupportCustom"" module=""networkCustom""><a href=""config/custom/custom.asp"" hidefocus ng-bind=""oCustom.szCustomName""></a></li>
+	</ul>
+</div>"
+33,"<html>
+<head>
+<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"">
+<meta http-equiv=""pragma"" content=""no-cache"">
+<meta http-equiv=""cache-control"" content=""no-cache, must-revalidate"">
+<meta http-equiv=""expires"" content=""0"">
+</head>
+
+<body>
+</body>
+<script id=""seajsnode"" src=""doc/script/lib/seajs/seajs/sea.min.js""></script>
+<script type=""text/javascript"">
+	seajs.config({
+    	base: ""/doc/script"",
+    	alias: {
+    		""jquery"": ""lib/jquery/jquery/jquery.min.js"",
+    		""cookie"": ""lib/jquery/cookie/jquery.cookie.js"",
+    		""webSession"": ""lib/webSession.js"",
+    		""utils"": ""lib/utils.js"",
+    		""websdk"": ""isapi/websdk.js"",
+    		""base64"": ""lib/base64.js"",
+    		""json2"": ""lib/json2.js"",
+            ""layout"": ""lib/jquery/layout/jquery.layout.js"",
+            ""angular"": ""lib/angularjs/angularjs/angular.min.js"",
+            ""translator"": ""lib/translator.js"",
+            ""AES"": ""lib/encryption/AES.js"",
+            ""cryptico"": ""lib/encryption/cryptico.min.js"",
+            ""crypto"": ""lib/encryption/crypto.min.js"",
+            ""encryption"": ""lib/encryption/encryption.js""
+    	}
+    });
+	seajs.use(""/doc/script/dispatch"");
+</script>
+</html>
+"
+34,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body class=""preview"">
+<div class=""layout-north"" id=""header"" ng-controller=""headerController"">
+	<div class=""header"" ng-include=""'common/header.asp'"" onload=""headerLoaded()""></div>
+</div>
+<div class=""layout-west"" id=""channel"" ng-controller=""channelController"">
+	<div class=""channel"" ng-include=""'common/channel.asp'"" onload=""channelLoaded()""></div>
+</div>
+<div class=""layout-center"">
+	<div class=""layout-center-inner"" id=""plugin"" ng-controller=""pluginController"">
+		<div class=""plugin"" ng-include=""'common/plugin.asp'"" onload=""pluginLoaded()""></div>
+	</div>
+	<div class=""layout-south-inner"" id=""tool"" ng-controller=""toolController"">
+		<div class=""tool"" ng-include=""'common/tool.asp'""  onload=""toolLoaded()""></div>
+	</div>
+</div>
+<div class=""layout-east"" id=""ptz"" ng-controller=""ptzController"">
+	<div class=""ptz"" ng-include=""'common/ptz.asp'"" onload=""ptzLoaded()""></div>
+</div>
+<div class=""layout-south"">
+	<div class=""footer"" id=""footer""></div>
+</div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+<script for=main_plugin_multiVideoActiveX event=""GetSelectWndInfo(SelectWndInfo)"">
+    GetSelectWndInfo(SelectWndInfo);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""PluginEventHandler(iEventType, iParam1, iParam2)"">
+    PluginEventHandler(iEventType, iParam1, iParam2);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""ZoomInfoCallback(szZoomInfo)"">
+	ZoomInfoCallback(szZoomInfo);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""SetZeroChanEnlarge(EnlargeInfo)"">
+	SetZeroChanEnlarge(EnlargeInfo);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""MouseEvent(szXml)"">
+	MouseEvent(szXml);
+</script>
+<script for=main_plugin_multiVideoActiveX event=""KeyBoardEvent(szXml)"">
+	KeyBoardEvent(szXml);
+</script>
+</html>
+"
+35,"<div class=""logo""></div>
+<ul id=""nav"" class=""nav"">
+	<li><a ng-bind=""oLan.preview"" ng-click=""jumpTo('preview')""></a></li>
+	<li><a ng-bind=""oLan.playback"" ng-click=""jumpTo('playback')""></a></li>
+	<li ng-show=""bSupportPicSearch""><a ng-bind=""oLan.picture"" ng-click=""jumpTo('download')""></a></li>
+	<li ng-show=""bSupportApplication""><a ng-bind=""oLan.application"" ng-click=""jumpTo('application')""></a></li>
+	<li><a ng-bind=""oLan.config"" ng-click=""jumpTo('config')""></a></li>
+</ul>
+<div class=""header-r"">
+	<div class=""user"">
+		<div class=""icon""></div>
+		<label ng-bind=""username""></label>
+	</div>
+	<div class=""help"" ng-show=""bSupportHelp"" ng-click=""help()"">
+		<div class=""icon""></div>
+    	<label class=""pointer"" ng-bind=""oLan.help""></label>
+	</div>
+	<div class=""exit"" ng-click=""exit()"" >
+		<div class=""icon""></div>
+        <label class=""pointer"" ng-bind=""oLan.logout""></label>
+	</div>
+</div>"
+36,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""urn:psialliance-org"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+37,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>2</retryLoginTime>
+</userCheck>"
+38,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>lock</lockStatus>
+<unlockTime>1796</unlockTime>
+<retryLoginTime>0</retryLoginTime>
+</userCheck>"
+39,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>6</retryLoginTime>
+</userCheck>"
+40,"<!DOCTYPE html>
+<head>
+    <title>Bad Request</title>
+    <link rel=""shortcut icon"" href=""data:image/x-icon;,"" type=""image/x-icon"">
+</head>
+<body>
+<h2>Access Error: 400 -- Bad Request</h2>
+<pre></pre>
+</body>
+</html>
+"
+41,"<div class=""tool-l"">
+	<button id=""btn_wnd_split"" ng-disabled=""bSyncPlayStatus"" ng-show=""oBtnShow.bWndSplit"" class=""btn"" type=""button""><i ng-class=""{1:'icon-wnd-1', 2:'icon-wnd-2', 3:'icon-wnd-3', 4:'icon-wnd-4'}[iWndSplitMode]""></i><i class=""icon-sel""></i></button>
+	<span pop-menu target-id=""btn_wnd_split"" on-menu-change=""onWndSplit"" type=""1"" win-num=""iWinNum""></span>
+	<span ng-if=""bPreview"">
+		<button ng-show=""oBtnShow.bWndSize"" id=""btn_size_change"" class=""btn"" type=""button""><i class=""icon-size-4""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_size_change"" on-menu-change=""onSizeChange"" type=""3""></span>
+		<button id=""btn_stream_type"" class=""btn"" type=""button"" title=""{{oLanTool.streamType}}""><i ng-class=""{0:'icon-stream-1', 1:'icon-stream-2', 2:'icon-stream-3'}[iStreamType]""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_stream_type"" on-menu-change=""onStreamChange"" type=""2"" num=""iStreamNum"" lan=""oLanTool""></span>
+		<button ng-if=""false"" id=""btn_plugin_type"" class=""btn"" type=""button""><i class=""icon-plugin-4""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_plugin_type"" on-menu-change=""onPluginChange"" type=""4""></span>
+		<button ng-hide=""iTalkNum===0 || !bSupportPlugin"" id=""btn_talk_change"" class=""btn"" type=""button"" title=""{{oBtnTitle.talkTips}}""><i class=""icon-talk""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_talk_change"" on-menu-change=""onTalkChange"" type=""5"" num=""iTalkNum"" lan=""oLanTool""></span>
+	</span>
+	<span ng-if=""!bPreview && bSupportSmartSearch && bSupportPlugin"">
+		<button id=""btn_draw_region"" ng-show=""oBtnShow.bDrawRegion"" class=""btn"" type=""button"" ng-disabled=""bSyncPlayStatus || 1!==iWndSplitMode || !oWndParam.bPlay""><i ng-class=""{1:'icon-draw-1', 2:'icon-draw-2', 3:'icon-draw-3', 4:'icon-draw-4'}[oWndParam.iSmartDrawType]""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_draw_region"" on-menu-change=""onDrawSmartRegion"" type=""6"" lan=""oLanTool""></span>
+	</span>
+	<span ng-if=""bSupportPlugin"">
+		<button class=""btn"" ng-click=""changeEagleEyeMode()"" ng-disabled=""bSyncPlayStatus || oBtnDisabled.bEagleEye"" title=""{{oBtnTitle.szEagleEyeMode}}""><i ng-class=""{true:'icon-eagleEye on', false:'icon-eagleEye'}[oBtnClass.bEagleEyePTZ]""></i></button>
+	</span>
+</div>
+<div class=""tool-m"" ng-if=""!bPreview"">
+	<button ng-if=""bSupportPlugin"" id=""btn_trans_code"" class=""btn"" type=""button"" title=""{{oLanTool.transcodingPlayback}}"" ng-show=""oBtnShow.bTranscoding"" ng-disabled=""oBtnDisabled.bTranscoding""><i ng-class=""{true:'icon-transcoding on', false:'icon-transcoding'}[oBtnClass.bTranscoding]""></i><i class=""icon-sel""></i></button>
+	<span ng-if=""bSupportPlugin"" pop-trans-code target-id=""btn_trans_code"" on-open-trans-code=""onOpenTransCode"" on-change-trans-code=""onChangeTransCode"" trans-code=""oBtnClass.bTranscoding"" trans-code-resolution=""aTransCodeResolution"" lan=""oLanTool""></span>
+	<button ng-if=""bSupportPlugin"" class=""btn"" type=""button"" title=""{{oBtnTitle.szReversePlay}}"" ng-click=""reversePlay()"" ng-disabled=""oBtnClass.bTranscoding || bSyncPlayStatus"" ng-show=""oBtnShow.bReversePlay""><i ng-class=""{true:'icon-pause', false:'icon-reverseplay'}[oBtnClass.bReversePlay]""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.stop}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""stop()""><i class=""icon-stop""></i></button>
+	<!-- <button class=""btn"" type=""button"" title=""{{oLanTool.slowForward}}"" ng-click=""slow()"" ng-if=""bSupportPlugin"" ng-disabled=""oBtnDisabled.bSlow""><i class=""icon-slow""></i></button> -->
+	<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPlay}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""play()""><i ng-class=""{true:'icon-pause', false:'icon-play'}[oBtnClass.bPlay]""></i></button>
+	<!-- <button class=""btn"" type=""button"" title=""{{oLanTool.fastForward}}"" ng-click=""fast()"" ng-if=""bSupportPlugin"" ng-disabled=""oBtnDisabled.bFast""><i class=""icon-fast""></i></button> -->
+	<button class=""btn"" type=""button"" title=""{{oLanTool.singleFrame}}"" ng-click=""frame()"" ng-disabled=""oBtnDisabled.bFrame""><i class=""icon-frame""></i></button>
+</div>
+<div class=""tool-r"">
+	<span ng-if=""bSupportPos && bSupportPlugin"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPos}}"" ng-click=""enablePos()"" ng-disabled=""oBtnDisabled.bPos""><i ng-class=""{true:'icon-pos on', false:'icon-pos'}[oBtnClass.bEnablePos]""></i></button>
+	</span>
+	<span ng-if=""bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szHasPlay}}"" ng-click=""playAll()""><i ng-class=""{true:'icon-stopplayall', false:'icon-playall'}[oBtnClass.bHasPlay]""></i></button>
+        <button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-disabled=""oBtnDisabled.bCapture"" ng-click=""capture()""><i class=""icon-capture""></i></button>
+		<button ng-if=""bSupportRecord"" class=""btn"" type=""button"" title=""{{oBtnTitle.szHasRecord}}"" ng-disabled=""!oBtnClass.bHasPlay"" ng-click=""recordAll()""><i ng-class=""{true:'icon-record on', false:'icon-record'}[oBtnClass.bHasRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.prevPage}}"" ng-disabled=""oBtnDisabled.bPrevPage"" ng-click=""prevPage()""><i class=""icon-prev""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.nextPage}}"" ng-disabled=""oBtnDisabled.bNextPage"" ng-click=""nextPage()""><i class=""icon-next""></i></button>
+    </span>
+    <span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.stopAll}}"" ng-click=""stopAll()"" ng-show=""!bSyncPlayStatus""><i class=""icon-stopall""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-click=""capture()"" ng-disabled=""oBtnDisabled.bCapture""><i class=""icon-capture""></i></button>
+		<button ng-if=""bSupportRecord"" class=""btn"" type=""button"" title=""{{oBtnTitle.szClip}}"" ng-disabled=""oBtnDisabled.bRecord"" ng-click=""record()""><i ng-class=""{true:'icon-clip on', false:'icon-clip'}[oBtnClass.bRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<!--<button class=""btn"" type=""button"" ng-show=""oBtnShow.bPicDownload""><i class=""icon-picdownload""></i></button>-->
+    </span>
+	<button id=""btn_sound"" class=""btn"" type=""button"" title=""{{oBtnTitle.szSound}}"" ng-disabled=""oBtnDisabled.bSound""><i ng-class=""{true:'icon-sound on', false:'icon-sound'}[oBtnClass.bSound]""></i><i class=""icon-sel""></i></button>
+	<span pop-sound target-id=""btn_sound"" on-change-sound=""onChangeSound"" on-open-sound=""onOpenSound"" sound=""oBtnClass.bSound""></span>
+	<span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.download}}"" ng-click=""openDownload()""><i class=""icon-download""></i></button>
+	</span>
+    <button class=""btn"" type=""button"" title=""{{oLanTool.fullScreen}}"" ng-click=""fullScreen()""><i class=""icon-full""></i></button>
+</div>"
+42,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>lock</lockStatus>
+<unlockTime>1800</unlockTime>
+<retryLoginTime>0</retryLoginTime>
+</userCheck>"
+43,"<div class=""device"">
+	<div class=""device-icon""></div>
+	<div class=""device-name ellipsis"" title=""{{szDeviceName}}""><label ng-bind=""szDeviceName""></label></div>
+</div>
+<div class=""channel-list"">
+	<div class=""ch"" ng-repeat=""ch in aChlist"">
+		<div class=""ch-btns"">
+		    <div ng-show=""bSyncPlayStatus"" class=""ch-check""><input type=""checkbox"" class=""checkbox"" ng-disabled=""bSyncPlay"" ng-click=""checkChannel($event.target, $index)"" /></div>
+			<div ng-show=""!bSyncPlayStatus"" ng-class=""{true:'ch-btn playing', false:'ch-btn play'}[ch.bPlay]"" ng-click=""play($index)""></div>
+		</div>
+		<div ng-if=""bPreview"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" ng-dblclick=""play($index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div ng-if=""!bPreview"" class=""ch-name ellipsis"" channel=""{{ch.iId}}"" ng-click=""select($event.target, $index)"" title=""{{ch.szName}}"">{{ch.szName}}</div>
+		<div class=""ch-btns"">
+			<div ng-show=""bPreview"" ng-class=""{true:'ch-btn recording', false:'ch-btn record'}[ch.bRecord]"" ng-click=""record($index)""></div>
+		</div>
+		<div ng-if=""bPreview && ch.szType!='zero'"" class=""ch-btns"" stream stream-type=""ch.iStreamType"" lan=""oLan"" num=""iStreamNum"" on-change=""changeStream"" channel-index=""{{$index}}""></div>
+	</div>
+</div>"
+44,"<div id=""tabs"" class=""event tabs-1"">
+	<ul id=""event"" ng-controller=""eventController"">
+		<li module=""eventMotion""><a href=""config/event/eventMotion.asp"" hidefocus ng-bind=""oLan.motion""></a></li>
+		<li module=""eventVideoTamper""><a href=""config/event/eventVideoTamper.asp"" hidefocus ng-bind=""oLan.videoTamper""></a></li>
+        <li module=""eventVideoLoss""><a href=""config/event/eventVideoLoss.asp"" hidefocus ng-bind=""oLan.videoLoss""></a></li>
+		<li module=""eventAlarmInput"" ng-if=""oTab.bSupportAlarmIn""><a href=""config/event/eventAlarmInput.asp"" hidefocus ng-bind=""oLan.alarmInput""></a></li>
+		<li module=""eventAlarmOutput"" ng-if=""oTab.bSupportAlarmOut""><a href=""config/event/eventAlarmOutput.asp"" hidefocus ng-bind=""oLan.alarmOutput""></a></li>
+		<li module=""eventAudioAction"" ng-if=""oTab.bSupportFlexibleAudioAction""><a href=""config/event/eventAudioAction.asp"" hidefocus ng-bind=""oLan.linkVideoOutput""></a></li>
+        <li module=""eventException""><a href=""config/event/eventException.asp"" hidefocus ng-bind=""oLan.exception""></a></li>
+		<li module=""eventWhiteLightAlarmOut"" ng-if=""oTab.bSupportWhiteLightAlarmOut""><a href=""config/event/eventWhiteLightAlarmOut.asp"" hidefocus ng-bind=""oLan.whiteLightAlarmOut""></a></li>
+		<li module=""eventAudioAlarmOut"" ng-if=""oTab.bSupportAudioAlarmOut""><a href=""config/event/eventAudioAlarmOut.asp"" hidefocus ng-bind=""oLan.audioAlarmOut""></a></li>
+	</ul>
+</div>"
+45,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<root xmlns=""urn:schemas-upnp-org:device-1-0"">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-upnp-org:device:EmbeddedNetDevice:1</deviceType>
+    <friendlyName>DS-7808HQH-K1 192.168.0.14</friendlyName>
+    <manufacturer>hikvision</manufacturer>
+    <manufacturerURL>http://www.hikvision.com</manufacturerURL>
+    <modelDescription>Digital Video Recorder</modelDescription>
+    <modelName>DS-7808HQH-K1</modelName>
+    <modelNumber>DS-7808HQH-K1</modelNumber>
+    <modelURL>http://www.hikvision.com</modelURL>
+    <serialNumber>0820211123CCCHJ10655798WCVU</serialNumber>
+    <UDN>uuid:484A3130-3635-3537-3938-ACB92F3A4DA6</UDN>
+    <serviceList>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:EmbeddedNetDeviceControl:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:EmbeddedNetDeviceControl</serviceId>
+        <controlURL>/</controlURL>
+        <eventSubURL>/</eventSubURL>
+        <SCPDURL>/</SCPDURL>
+      </service>
+    </serviceList>
+   <presentationURL>/</presentationURL>
+</device>
+</root>"
+46,Can't locate the url
+47,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<userCheck>
+<statusValue>401</statusValue>
+<statusString>Unauthorized</statusString>
+<lockStatus>unlock</lockStatus>
+<unlockTime>0</unlockTime>
+<retryLoginTime>4</retryLoginTime>
+</userCheck>"
+48,"<div id=""tabs"" class=""maintain tabs-1"">
+	<ul id=""maintain"" ng-controller=""maintainController"">
+		<li module=""maintainUpgrade""><a href=""config/system/maintainUpgrade.asp"" hidefocus ng-bind=""oLan.upgradeMaintain""></a></li>
+		<li module=""maintainLog""><a href=""config/system/maintainLog.asp"" hidefocus ng-bind=""oLan.log""></a></li>
+		<li module=""dignose"" ng-if=""oTab.bDiagnosedDataConf""><a href=""config/system/dignose.asp"" hidefocus ng-bind=""oLan.dignose""></a></li>
+		<li module=""maintainService"" ng-if=""oTab.bSupportService""><a href=""config/system/maintainService.asp"" hidefocus ng-bind=""oLan.systemService""></a></li>
+	</ul>
+</div>"
+49,"<div class=""tool-l"">
+	<button id=""btn_wnd_split"" ng-disabled=""bSyncPlayStatus"" ng-show=""oBtnShow.bWndSplit"" class=""btn"" type=""button""><i ng-class=""{1:'icon-wnd-1', 2:'icon-wnd-2', 3:'icon-wnd-3', 4:'icon-wnd-4'}[iWndSplitMode]""></i><i class=""icon-sel""></i></button>
+	<span pop-menu target-id=""btn_wnd_split"" on-menu-change=""onWndSplit"" type=""1"" win-num=""iWinNum""></span>
+	<span ng-if=""bPreview"">
+		<button ng-show=""oBtnShow.bWndSize"" id=""btn_size_change"" class=""btn"" type=""button""><i class=""icon-size-4""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_size_change"" on-menu-change=""onSizeChange"" type=""3""></span>
+		<button id=""btn_stream_type"" class=""btn"" type=""button"" title=""{{oLanTool.streamType}}""><i ng-class=""{0:'icon-stream-1', 1:'icon-stream-2', 2:'icon-stream-3'}[iStreamType]""></i><i class=""icon-sel""></i></button>
+        <span pop-menu target-id=""btn_stream_type"" on-menu-change=""onStreamChange"" type=""2"" num=""iStreamNum"" lan=""oLanTool""></span>
+		<button ng-if=""false"" id=""btn_plugin_type"" class=""btn"" type=""button""><i class=""icon-plugin-4""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_plugin_type"" on-menu-change=""onPluginChange"" type=""4""></span>
+		<button ng-hide=""iTalkNum===0 || bISNoPlugin"" id=""btn_talk_change"" class=""btn"" type=""button"" title=""{{oBtnTitle.talkTips}}""><i class=""icon-talk""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_talk_change"" on-menu-change=""onTalkChange"" type=""5"" num=""iTalkNum"" lan=""oLanTool""></span>
+	</span>
+	<span ng-if=""!bPreview && bSupportSmartSearch && !bISNoPlugin"">
+		<button id=""btn_draw_region"" ng-show=""oBtnShow.bDrawRegion"" class=""btn"" type=""button"" ng-disabled=""bSyncPlayStatus || 1!==iWndSplitMode || !oWndParam.bPlay""><i ng-class=""{1:'icon-draw-1', 2:'icon-draw-2', 3:'icon-draw-3', 4:'icon-draw-4'}[oWndParam.iSmartDrawType]""></i><i class=""icon-sel""></i></button>
+		<span pop-menu target-id=""btn_draw_region"" on-menu-change=""onDrawSmartRegion"" type=""6"" lan=""oLanTool""></span>
+	</span>
+	<span ng-if=""!bISNoPlugin"">
+		<button class=""btn"" ng-click=""changeEagleEyeMode()"" ng-disabled=""bSyncPlayStatus || oBtnDisabled.bEagleEye"" title=""{{oBtnTitle.szEagleEyeMode}}""><i ng-class=""{true:'icon-eagleEye on', false:'icon-eagleEye'}[oBtnClass.bEagleEyePTZ]""></i></button>
+	</span>
+</div>
+<div class=""tool-m"" ng-if=""!bPreview"">
+	<button ng-if=""!bISNoPlugin"" id=""btn_trans_code"" class=""btn"" type=""button"" title=""{{oLanTool.transcodingPlayback}}"" ng-show=""oBtnShow.bTranscoding"" ng-disabled=""oBtnDisabled.bTranscoding""><i ng-class=""{true:'icon-transcoding on', false:'icon-transcoding'}[oBtnClass.bTranscoding]""></i><i class=""icon-sel""></i></button>
+	<span ng-if=""!bISNoPlugin"" pop-trans-code target-id=""btn_trans_code"" on-open-trans-code=""onOpenTransCode"" on-change-trans-code=""onChangeTransCode"" trans-code=""oBtnClass.bTranscoding"" trans-code-resolution=""aTransCodeResolution"" lan=""oLanTool""></span>
+	<button ng-if=""!bISNoPlugin"" class=""btn"" type=""button"" title=""{{oBtnTitle.szReversePlay}}"" ng-click=""reversePlay()"" ng-disabled=""oBtnClass.bTranscoding || bSyncPlayStatus"" ng-show=""oBtnShow.bReversePlay""><i ng-class=""{true:'icon-pause', false:'icon-reverseplay'}[oBtnClass.bReversePlay]""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.stop}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""stop()""><i class=""icon-stop""></i></button>
+	<button ng-if=""!bISNoPlugin"" class=""btn"" type=""button"" title=""{{oLanTool.slowForward}}"" ng-click=""slow()"" ng-disabled=""oBtnDisabled.bSlow""><i class=""icon-slow""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPlay}}"" ng-disabled=""bSyncPlayStatus && !bSyncPlayCondition"" ng-click=""play()""><i ng-class=""{true:'icon-pause', false:'icon-play'}[oBtnClass.bPlay]""></i></button>
+	<button ng-if=""!bISNoPlugin"" class=""btn"" type=""button"" title=""{{oLanTool.fastForward}}"" ng-click=""fast()"" ng-disabled=""oBtnDisabled.bFast""><i class=""icon-fast""></i></button>
+	<button class=""btn"" type=""button"" title=""{{oLanTool.singleFrame}}"" ng-click=""frame()"" ng-disabled=""oBtnDisabled.bFrame""><i class=""icon-frame""></i></button>
+</div>
+<div class=""tool-r"">
+	<span ng-if=""bSupportPos && !bISNoPlugin && false"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szPos}}"" ng-click=""enablePos()"" ng-disabled=""oBtnDisabled.bPos""><i ng-class=""{true:'icon-pos on', false:'icon-pos'}[oBtnClass.bEnablePos]""></i></button>
+	</span>
+	<span ng-if=""bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szHasPlay}}"" ng-click=""playAll()""><i ng-class=""{true:'icon-stopplayall', false:'icon-playall'}[oBtnClass.bHasPlay]""></i></button>
+        <button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-disabled=""oBtnDisabled.bCapture"" ng-click=""capture()""><i class=""icon-capture""></i></button>
+		<button ng-if=""bSupportRecord"" class=""btn"" type=""button"" title=""{{oBtnTitle.szHasRecord}}"" ng-disabled=""!oBtnClass.bHasPlay"" ng-click=""recordAll()""><i ng-class=""{true:'icon-record on', false:'icon-record'}[oBtnClass.bHasRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.prevPage}}"" ng-disabled=""oBtnDisabled.bPrevPage"" ng-click=""prevPage()""><i class=""icon-prev""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.nextPage}}"" ng-disabled=""oBtnDisabled.bNextPage"" ng-click=""nextPage()""><i class=""icon-next""></i></button>
+    </span>
+    <span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.stopAll}}"" ng-click=""stopAll()"" ng-show=""!bSyncPlayStatus""><i class=""icon-stopall""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oLanTool.capture}}"" ng-click=""capture()"" ng-disabled=""oBtnDisabled.bCapture""><i class=""icon-capture""></i></button>
+		<button ng-if=""bSupportRecord"" class=""btn"" type=""button"" title=""{{oBtnTitle.szClip}}"" ng-disabled=""oBtnDisabled.bRecord"" ng-click=""record()""><i ng-class=""{true:'icon-clip on', false:'icon-clip'}[oBtnClass.bRecord]""></i></button>
+		<button class=""btn"" type=""button"" title=""{{oBtnTitle.szZoom}}"" ng-disabled=""oBtnDisabled.bEzoom"" ng-click=""enableEzoom()""><i ng-class=""{true:'icon-ezoom on', false:'icon-ezoom'}[oBtnClass.bEzoom]""></i></button>
+		<!--<button class=""btn"" type=""button"" ng-show=""oBtnShow.bPicDownload""><i class=""icon-picdownload""></i></button>-->
+    </span>
+	<button id=""btn_sound"" class=""btn"" type=""button"" title=""{{oBtnTitle.szSound}}"" ng-disabled=""oBtnDisabled.bSound""><i ng-class=""{true:'icon-sound on', false:'icon-sound'}[oBtnClass.bSound]""></i><i class=""icon-sel""></i></button>
+	<span pop-sound target-id=""btn_sound"" on-change-sound=""onChangeSound"" on-open-sound=""onOpenSound"" sound=""oBtnClass.bSound""></span>
+	<span ng-if=""!bPreview"">
+		<button class=""btn"" type=""button"" title=""{{oLanTool.download}}"" ng-click=""openDownload()""><i class=""icon-download""></i></button>
+	</span>
+    <button class=""btn"" type=""button"" title=""{{oLanTool.fullScreen}}"" ng-click=""fullScreen()""><i class=""icon-full""></i></button>
+</div>
+"
+50,"<div id=""tabs"" class=""maintain tabs-1"">
+	<ul id=""maintain"" ng-controller=""maintainController"">
+		<li module=""maintainUpgrade""><a href=""config/system/maintainUpgrade.asp"" hidefocus ng-bind=""oLan.upgradeMaintain""></a></li>
+		<li module=""onlineUpgrade"" ng-if=""oTab.bSupportOnlineUpgrade""><a href=""config/system/onlineUpgrade.asp"" hidefocus ng-bind=""oLan.onlineUpgrade""></a></li>
+		<li module=""maintainLog""><a href=""config/system/maintainLog.asp"" hidefocus ng-bind=""oLan.log""></a></li>
+		<li module=""dignose"" ng-if=""oTab.bDiagnosedDataConf""><a href=""config/system/dignose.asp"" hidefocus ng-bind=""oLan.dignose""></a></li>
+		<li module=""maintainService"" ng-if=""oTab.bSupportService""><a href=""config/system/maintainService.asp"" hidefocus ng-bind=""oLan.systemService""></a></li>
+		<li module=""discardFalseAlarm"" ng-if=""oTab.bSupportDiscardFalseAlarm""><a href=""config/system/discardFalseAlarm.asp"" hidefocus ng-bind=""oLan.alarmStatistics""></a></li>
+	</ul>
+</div>"
+51,"<html>
+<head>
+<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"">
+<meta http-equiv=""pragma"" content=""no-cache"">
+<meta http-equiv=""cache-control"" content=""no-cache, must-revalidate"">
+<meta http-equiv=""expires"" content=""0"">
+</head>
+
+<body>
+</body>
+<script id=""seajsnode"" src=""doc/script/lib/seajs/seajs/sea.min.js""></script>
+<script type=""text/javascript"">
+	seajs.config({
+    	base: ""/doc/script"",
+    	alias: {
+    		""jquery"": ""lib/jquery/jquery/jquery.min.js"",
+    		""cookie"": ""lib/jquery/cookie/jquery.cookie.js"",
+    		""webSession"": ""lib/webSession.js"",
+    		""utils"": ""lib/utils.js"",
+    		""websdk"": ""isapi/websdk.js"",
+    		""base64"": ""lib/base64.js"",
+    		""json2"": ""lib/json2.js"",
+            ""layout"": ""lib/jquery/layout/jquery.layout.js"",
+            ""angular"": ""lib/angularjs/angularjs/angular.min.js"",
+            ""translator"": ""lib/translator.js"",
+            ""AES"": ""lib/encryption/AES.js"",
+            ""cryptico"": ""lib/encryption/cryptico.min.js"",
+            ""crypto"": ""lib/encryption/crypto.min.js"",
+            ""encryption"": ""lib/encryption/encryption.js""
+    	},
+        preload: [""lib/jsPlugin/polyfill2""]
+    });
+	seajs.use(""/doc/script/dispatch"");
+</script>
+</html>
+"
+52,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<ResponseStatus version=""1.0"" xmlns=""http://www.hikvision.com/ver20/XMLSchema"">
+<requestURL>/ISAPI/Security/sessionLogin</requestURL>
+<statusCode>6</statusCode>
+<statusString>Invalid XML Content</statusString>
+<subStatusCode>badXmlContent</subStatusCode>
+</ResponseStatus>
+"
+53,"<!DOCTYPE html>
+<html><head><title>Document Error: Not Found</title></head>
+<body><h2>Access Error: 404 -- Not Found</h2>
+<p>Can't open URL</p>
+</body>
+</html>
+"
+54,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body ng-keypress=""docPress($event)"" ng-controller=""loginController"" ng-cloak class=""login-body ng-cloak"">
+<div class=""login"" id=""login"">
+	<div class=""top"">
+		<div class=""logo""></div>
+    	<div class=""language"">
+			<div class=""language-show"" ng-click=""showLanguageList($event)""><span class=""current-language"" id=""current_language""></span></div>
+			<div class=""language-list"" id=""language_list"" ng-click=""changeLanguage($event)""></div>
+		</div>
+	</div>
+	<table cellspacing=""0"" cellpadding=""0"" border=""0"" class=""middle"">
+		<tr>
+			<td class=""login-l"">&nbsp;</td>
+			<td class=""login-m"">
+				<div class=""login-part"">
+					<div class=""line""></div>
+					<div class=""login-error"">
+						<div class=""inputValidTip"" ng-show=""szErrorTip!=''""><i class='error'></i><label>{{szErrorTip}}</label></div>
+					</div>
+					<div class=""login-user"">
+						<input type=""text"" class=""login-input"" id=""username"" ng-model=""username"" maxlength=""32"" autocomplete=""off"" placeholder=""{{oLan.username}}"" />
+						<i class=""icon-user""></i>
+					</div>
+					<div class=""login-item"">
+						<input type=""password"" class=""login-input"" id=""password"" ng-model=""password"" maxlength=""16"" placeholder=""{{oLan.password}}"" pigsney />
+						<i class=""icon-pass""></i>
+					</div>
+					<div class=""login-item bottom"">
+					    <span class=""pwd-link"" ng-show=""oCap.bSptGuidImport || oCap.bSptQAReset"" ng-bind=""oLan.forgetPwd"" ng-click=""forgetPwd()""></span>
+						<button type=""button"" class=""btn btn-primary login-btn"" ng-click=""login()""><label ng-bind=""oLan.login""></label></button>
+					</div>
+					<!--<div class=""login-item anonymous"" ng-show=""anonymous"">
+						<span ng-bind=""oLan.anonymous"" ng-click=""login('anonymous')""></span>
+					</div>-->
+				</div>
+			</td>
+			<td class=""login-r"">&nbsp;</td>
+		</tr>
+	</table>
+	<div class=""footer"" id=""footer""></div>
+</div>
+<div id=""active"" class=""msg-content-wrap"">
+    <div class=""msg-content"">
+        <div class=""password"">
+        	<span class=""desc""><label ng-bind=""oLan.username""></label></span>
+        	<span><label ng-bind=""activeUsername""></label></span>
+        </div>
+        <div password lan=""oLan"" o-password=""oActivePwd"" user-name=""activeUsername"" spec-char=""true"" ps-length=""16"" ps-strength=""true"" hide-default=""true""></div>
+    </div>
+</div>
+<div id=""main_plugin"" class=""no-window""></div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+</html>"
+55,"<div class=""logo""></div>
+<ul id=""nav"" class=""nav"">
+	<li ng-show=""bSptCmPreview""><a ng-bind=""oLan.preview"" ng-click=""jumpTo('preview')""></a></li>
+	<li ng-show=""bSptCmRecord""><a ng-bind=""oLan.playback"" ng-click=""jumpTo('playback')""></a></li>
+	<li ng-show=""bSupportPicSearch""><a ng-bind=""oLan.picture"" ng-click=""jumpTo('download')""></a></li>
+	<li ng-show=""bSupportApplication""><a ng-bind=""oLan.application"" ng-click=""jumpTo('application')""></a></li>
+	<li><a ng-bind=""oLan.config"" ng-click=""jumpTo('config')""></a></li>
+</ul>
+<div class=""header-r"">
+	<div class=""user"">
+		<div class=""icon""></div>
+		<label ng-bind=""username""></label>
+	</div>
+	<div class=""help"" ng-show=""bSupportHelp"" ng-click=""help()"">
+		<div class=""icon""></div>
+    	<label class=""pointer"" ng-bind=""oLan.help""></label>
+	</div>
+	<div class=""exit"" ng-click=""exit()"" >
+		<div class=""icon""></div>
+        <label class=""pointer"" ng-bind=""oLan.logout""></label>
+	</div>
+</div>"
+56,"<div id=""basicPort"" ng-controller=""basicPortController"">
+    <div class=""items"">
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.httpPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.rtspPort""></span>
+            <span>
+                <input ng-model=""oParams.szRtspPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oRtspPort"" />
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oCap.bSptHttps"">
+            <span class=""first"" ng-bind=""oLan.httpsPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpsPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpsPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.sdkPort""></span>
+            <span>
+                <input ng-model=""oParams.szServicePort"" type=""text"" class=""text"" input-valid=""oParamsValid.oSdkPort"" />
+            </span>
+        </div>
+    </div>
+	<button class=""btn btn-primary btn-save"" type=""button"" ng-click=""save()"">
+        <span class=""img"">&nbsp;</span>
+        <span ng-bind=""oLan.save""></span>
+    </button>
+</div>"
+57,"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<root xmlns=""urn:schemas-upnp-org:device-1-0"">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-upnp-org:device:EmbeddedNetDevice:1</deviceType>
+    <friendlyName>DFT6016 192.168.1.23</friendlyName>
+    <manufacturer>hikvision</manufacturer>
+    <manufacturerURL>http://www.hikvision.com</manufacturerURL>
+    <modelDescription>Digital Video Recorder</modelDescription>
+    <modelName>DFT6016</modelName>
+    <modelNumber>DFT6016</modelNumber>
+    <modelURL>http://www.hikvision.com</modelURL>
+    <serialNumber>1620201214CCWRF25464973WCVU</serialNumber>
+    <UDN>uuid:48463235-3436-3439-3733-A0224ED0D1DC</UDN>
+    <serviceList>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:EmbeddedNetDeviceControl:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:EmbeddedNetDeviceControl</serviceId>
+        <controlURL>/</controlURL>
+        <eventSubURL>/</eventSubURL>
+        <SCPDURL>/</SCPDURL>
+      </service>
+    </serviceList>
+   <presentationURL>/</presentationURL>
+</device>
+</root>"
+58,"<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" >
+	<meta http-equiv=""Pragma"" content=""no-cache"" />
+	<meta http-equiv=""Cache-Control"" content=""no-cache, must-revalidate"" />
+	<meta http-equiv=""Expires"" content=""0"" />
+	<script>
+		document.write(""<link type='text/css' href='../ui/css/ui.css?version="" + new Date().getTime() + ""' rel='stylesheet' />"");
+	</script>
+</head>
+<body ng-keypress=""docPress($event)"" ng-controller=""loginController"" ng-cloak class=""login-body ng-cloak"">
+<div class=""login"" id=""login"">
+	<div class=""top"">
+		<div class=""logo""></div>
+    	<div class=""language"">
+			<div class=""language-show"" ng-click=""showLanguageList($event)""><span class=""current-language"" id=""current_language""></span></div>
+			<div class=""language-list"" id=""language_list"" ng-click=""changeLanguage($event)""></div>
+		</div>
+	</div>
+	<table cellspacing=""0"" cellpadding=""0"" border=""0"" class=""middle"">
+		<tr>
+			<td class=""login-l"">&nbsp;</td>
+			<td class=""login-m"">
+				<div class=""login-part"">
+					<div class=""line""></div>
+					<div class=""login-error"">
+						<div class=""inputValidTip"" ng-show=""szErrorTip!=''""><i class='error'></i><label>{{szErrorTip}}</label></div>
+					</div>
+					<div class=""login-user"">
+						<input type=""text"" class=""login-input"" id=""username"" ng-model=""username"" maxlength=""32"" autocomplete=""off"" placeholder=""{{oLan.username}}"" />
+						<i class=""icon-user""></i>
+					</div>
+					<div class=""login-item"">
+						<input type=""password"" class=""login-input"" id=""password"" ng-model=""password"" maxlength=""16"" placeholder=""{{oLan.password}}"" pigsney />
+						<i class=""icon-pass""></i>
+					</div>
+					<div class=""login-item bottom"">
+					    <span class=""pwd-link"" ng-bind=""oLan.forgetPwd"" ng-show=""oCap.bSptGuidImport || oCap.bSptQAReset || oCap.bSupportWithSecurityEmail"" ng-click=""forgetPwd()""></span>
+						<button type=""button"" class=""btn btn-primary login-btn"" ng-click=""login()""><label ng-bind=""oLan.login""></label></button>
+					</div>
+				    <div class=""login-item privacyTip-login"">
+						<span ng-bind=""oLan.privacyTip""></span>
+					</div>
+				</div>
+			</td>
+			<td class=""login-r"">&nbsp;</td>
+		</tr>
+	</table>
+	<div class=""footer"" id=""footer""></div>
+</div>
+<div id=""active"" class=""msg-content-wrap"">
+    <div>
+         <div class=""item notetip"">
+            <label class=""noteicon""></label>
+            <label ng-bind=""oLan.privacyTip"" style=""position: absolute;top: 54px;""></label>
+        </div>
+        <div class=""msg-content"">
+            <div class=""password"">
+                <span class=""desc""><label ng-bind=""oLan.username""></label></span>
+                <span><label ng-bind=""activeUsername""></label></span>
+            </div>
+            <div password lan=""oLan"" o-password=""oActivePwd"" b-loginpage=""true"" user-name=""activeUsername"" spec-char=""true"" ps-length=""16"" ps-strength=""true"" hide-default=""true"" sz-extend-check=""true""></div>
+        </div>
+    </div>
+</div>
+<div id=""wifiConfig"" class=""msg-content-wrap"">
+    <div class=""msg-content"">
+        <div ng-show=""oCap.bSupportActive"">
+			<!--<div class=""item"">
+				<span><input type=""checkbox"" class=""checkbox"" ng-model=""oParams.bActivePsw""/><label ng-bind=""oLan.useActivePwd""></label></span>
+			</div>-->
+			<div class=""item"">
+				<span class=""channelPwdFirst"" ng-bind=""oLan.ipcActivePwd"" title=""{{oLan.ipcActivePwd}}""></span>
+				<span>
+					<input id=""ipcActivePassword"" type=""password"" ng-disabled=""oParams.bActivePsw"" class=""wifiSelect"" ng-model=""oParams.szPwd"" input-valid=""oParamsValid.oPassword"" maxlength=""16"" pigsney />
+				</span>
+			</div>
+			<p class=""txt-desc""><span ng-bind=""oLan.passwordValidTips""></span></p>
+		</div>
+		<div class=""item title"" ng-show=""oWifi.bSupportWifiRegion || oWifi.bSupportWifiEnhance"">
+			<span ng-bind=""oLan.wifiConfig""></span>
+		</div>
+        <div class=""password"" ng-show=""oWifi.bSupportWifiRegion"">
+            <span class=""wifiArea""><label ng-bind=""oLan.areaCountry""></label></span>
+            <span><select class=""wifiSelect"" ng-model=""oWifi.szWifiRegion"" ng-options=""oArea.value as oArea.name for oArea in oWifi.aAreaCountryList""></select></span>
+        </div>
+        <div class=""item"" ng-show=""oWifi.bSupportWifiEnhance"">
+            <span><input type=""checkbox"" class=""checkbox"" ng-model=""oWifi.bWifiEnhance""/><label ng-bind=""oLan.enableWifiEnhance""></label></span>
+        </div>
+    </div>
+</div>
+<div id=""main_plugin"" class=""no-window"" ng-show=""!bPluginInstalled""></div>
+</body>
+<script id=""seajsnode"" src=""../script/lib/seajs/seajs/sea.min.js""></script>
+<script>
+	document.write(""<script src='../script/lib/seajs/config/sea-config.js?version="" + new Date().getTime() + ""' ></scr"" + ""ipt>"");
+</script>
+</html>"
+59,"<div id=""basicPort"" ng-controller=""basicPortController"">
+    <div class=""items"">
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.httpPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.rtspPort""></span>
+            <span>
+                <input ng-model=""oParams.szRtspPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oRtspPort"" />
+            </span>
+        </div>
+        <div class=""item"" ng-show=""oCap.bSptHttps"">
+            <span class=""first"" ng-bind=""oLan.httpsPort""></span>
+            <span>
+                <input ng-model=""oParams.szHttpsPort"" type=""text"" class=""text"" input-valid=""oParamsValid.oHttpsPort"" />
+            </span>
+        </div>
+        <div class=""item"">
+            <span class=""first"" ng-bind=""oLan.sdkPort""></span>
+            <span>
+                <input ng-model=""oParams.szServicePort"" type=""text"" class=""text"" input-valid=""oParamsValid.oSdkPort"" />
+            </span>
+        </div>
+    </div>
+	<button class=""btn btn-primary btn-save"" type=""button"" ng-click=""save()"" ng-disabled=""oCap.bSupportModify"">
+        <span class=""img"">&nbsp;</span>
+        <span ng-bind=""oLan.save""></span>
+    </button>
+</div>"
+60,"<div id=""tabs"" class=""network tabs-1"">
+	<ul id=""advanced"" ng-controller=""advancedController"">
+	    <li ng-if=""oAdvancedCap.bSupportSnmp"" module=""advancedSnmp""><a href=""config/network/advancedSnmp.asp"" hidefocus>SNMP</a></li>
+        <li ng-if=""oAdvancedCap.bSupportFtp"" module=""advancedFtp""><a href=""config/network/advancedFtp.asp"" hidefocus>FTP</a></li>
+        <li module=""advancedEmail""><a href=""config/network/advancedEmail.asp"" hidefocus>Email</a></li>
+        <li ng-if=""oAdvancedCap.bSupportPlatform"" module=""advancedPlatform""><a href=""config/network/advancedPlatform.asp"" hidefocus ng-bind=""oLan.platformAccess""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportHttps"" module=""advancedHttps""><a href=""config/network/advancedHttps.asp"" hidefocus>HTTPS</a></li>
+        <li ng-if=""oAdvancedCap.m_bSupportWAN"" module=""advancedWAN""><a href=""config/network/advancedWAN.asp"" hidefocus>WAN</a></li>
+        <li ng-if=""oAdvancedCap.bSupportWifi"" module=""advancedWifi""><a href=""config/network/advancedWifi.asp"" hidefocus>Wi-Fi</a></li>
+        <!--<li ng-if=""oAdvancedCap.bSupportWLANAP"" module=""advancedWLANAP""><a href=""config/network/advancedWLANAP.asp"" hidefocus ng-bind=""oLan.wlanap""></a></li>-->
+        <li ng-if=""oAdvancedCap.bSupport28181Service"" module=""advanced28181Service""><a href=""config/network/advanced28181Service.asp"" hidefocus ng-bind=""oLan.service28181""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportMulticast"" module=""advancedMulticast""><a href=""config/network/advancedMulticast.asp"" hidefocus ng-bind=""oLan.activeMulticase""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportRtmp"" module=""advancedRtmp""><a href=""config/network/advancedRtmp.asp"" hidefocus ng-bind=""oLan.rtmpConfig""></a></li>
+        <li ng-if=""oAdvancedCap.bSupportNetworkOther"" module=""advancedOther""><a href=""config/network/advancedOther.asp"" hidefocus ng-bind=""oLan.other""></a></li>
+	    <li ng-if=""oAdvancedCap.bSupportProtocolConfig"" module=""advancedProtocolConfig""><a href=""config/network/advancedProtocolConfig.asp"" hidefocus ng-bind=""oLan.integrationProtocol""></a></li>
+	</ul>
+</div>"
